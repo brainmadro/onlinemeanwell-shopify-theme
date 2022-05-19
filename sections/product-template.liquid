@@ -1,7 +1,7 @@
 <div class="product-detail-lateral">
   {%- assign current_variant = product.selected_or_first_available_variant -%}
   <div class="product_header-container">
-    {{ product | json }}
+    {% comment %} {{ product | json }} {% endcomment %}
     <img src="{{ product.featured_image | product_img_url: 'large' }}" class="product_main_image">
     <h1 class="product-single__title">{{ current_variant.metafields.digikey.title_tag }}</h1>
     <h2 class="product-description">{{ current_variant.metafields.digikey.product_description }}</h2>
