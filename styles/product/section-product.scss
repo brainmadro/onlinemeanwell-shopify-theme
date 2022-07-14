@@ -1,0 +1,25 @@
+.accordion__title {
+    color: $color-main-accent;
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+.header-wrapper {
+    margin-left: 20%;
+}
+
+.product-main-container {
+    margin-left: 20%;
+}
+
+.product-main-container {
+    background-color: $color-background-primary;
+    height: calc(100vh - 85px);
+}
+
+.product__info-container {
+    display: flex;
+    row-gap: 1em;
+    column-gap: 1.2em;
+    flex-wrap: wrap;
+}

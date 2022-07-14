@@ -1,0 +1,64 @@
+.card {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 1.5em;
+}
+
+.voltage-selector {
+  background-color: #fafafe;
+  border-radius: 50px;
+  padding: 0.3em;
+}
+
+/* The container */
+.container {
+  display: inline-flex;
+  position: relative;
+  margin-left: 35px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.container input {
+  position: absolute;
+  opacity: 0;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  align-items: center;
+  border-radius: 50%;
+  color: #929292;
+  display: flex;
+  justify-content: center;
+  height: 2.7em;
+  width: 2.7em;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #f3f3f3;
+}
+
+/* When the radio button is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #fff;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  color: #000;
+  font-weight: 600;
+}
+
+.header-wrapper {
+  background-color: #E73127;
+  color: #fff;
+}
+.header-wrapper .h2 {
+  color: #fff;
+}
+.header-wrapper .header__menu-item {
+  color: #fff;
+}
