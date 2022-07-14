@@ -2,7 +2,7 @@
 
 This theme is mado for Online Store 2.0 so we recommend you use Shopify CLI instead of Themekit
 
-## CSS
+## :dizzy: CSS
 
 This project use Sass to stylize the HTML
 
