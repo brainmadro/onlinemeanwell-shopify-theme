@@ -1,9 +1,12 @@
+<<<<<<< HEAD
 .accordion__title {
   color: #E73127;
   font-size: 1.5em;
   font-weight: 600;
 }
 
+=======
+>>>>>>> a409f2f20b96a5ca41a9b99b238707be81cd4165
 .header-wrapper {
   margin-left: 20%;
 }
@@ -12,6 +15,7 @@
   margin-left: 20%;
 }
 
+<<<<<<< HEAD
 .product-main-container {
   background-color: #fafafe;
   height: calc(100vh - 85px);
@@ -26,6 +30,10 @@
 
 .attribute_title {
   color: #929292;
+=======
+.attribute_title {
+  color: var(--color-text-grey);
+>>>>>>> a409f2f20b96a5ca41a9b99b238707be81cd4165
   font-size: 0.75em;
 }
 
@@ -91,13 +99,21 @@
 .circle_progress_bar .bg {
   fill: none;
   stroke-width: 6px;
+<<<<<<< HEAD
   stroke: #fafafe;
+=======
+  stroke: var(--accent-background);
+>>>>>>> a409f2f20b96a5ca41a9b99b238707be81cd4165
 }
 
 .circle_progress_bar .progress {
   fill: none;
   stroke-width: 6px;
+<<<<<<< HEAD
   stroke: #E73127;
+=======
+  stroke: var(--color-main-accent);
+>>>>>>> a409f2f20b96a5ca41a9b99b238707be81cd4165
   stroke-linecap: round;
   stroke-dasharray: 232.36;
   transform: rotate(-90deg);
@@ -120,7 +136,11 @@
 }
 
 .current_progress_bar-text, .voltage_progress_bar-text, .wattage_progress_bar-text {
+<<<<<<< HEAD
   color: #E73127;
+=======
+  color: var(--color-main-accent);
+>>>>>>> a409f2f20b96a5ca41a9b99b238707be81cd4165
   font-size: 0.75em;
   line-height: 16px;
   position: absolute;
@@ -139,7 +159,11 @@
 .header_search-input {
   border: none;
   border-radius: 6px;
+<<<<<<< HEAD
   font-family: "Sofia Pro", sans-serif;
+=======
+  font-family: var(--font-family-body);
+>>>>>>> a409f2f20b96a5ca41a9b99b238707be81cd4165
   padding: 0.5em;
   padding-left: 3em;
   width: 18em;
@@ -161,7 +185,11 @@
 
 .product_detail-card {
   align-items: center;
+<<<<<<< HEAD
   background-color: #fafafe;
+=======
+  background-color: var(--accent-background);
+>>>>>>> a409f2f20b96a5ca41a9b99b238707be81cd4165
   border-radius: 8px;
   display: flex;
   flex-direction: column;

@@ -4,6 +4,7 @@
   padding: 1.5em;
 }
 
+<<<<<<< HEAD
 .voltage-selector {
   background-color: #fafafe;
   border-radius: 50px;
@@ -52,6 +53,8 @@
   font-weight: 600;
 }
 
+=======
+>>>>>>> a409f2f20b96a5ca41a9b99b238707be81cd4165
 .header-wrapper {
   background-color: #E73127;
   color: #fff;

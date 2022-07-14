@@ -11,7 +11,11 @@
   {%- endif -%}
 
   <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.gallery_layout }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
+<<<<<<< HEAD
     {% comment %} <div class="grid__item product__media-wrapper">
+=======
+    <div class="grid__item product__media-wrapper">
+>>>>>>> a409f2f20b96a5ca41a9b99b238707be81cd4165
       <media-gallery id="MediaGallery-{{ section.id }}" role="region" {% if section.settings.enable_sticky_info %}class="product__media-gallery"{% endif %} aria-label="{{ 'products.product.media.gallery_viewer' | t }}" data-desktop-layout="{{ section.settings.gallery_layout }}">
         <div id="GalleryStatus-{{ section.id }}" class="visually-hidden" role="status"></div>
         <slider-component id="GalleryViewer-{{ section.id }}" class="slider-mobile-gutter">
@@ -170,19 +174,40 @@
           </slider-component>
         {%- endif -%}
       </media-gallery>
+<<<<<<< HEAD
     </div> {% endcomment %}
+=======
+    </div>
+>>>>>>> a409f2f20b96a5ca41a9b99b238707be81cd4165
     <div class="product__info-wrapper grid__item{% if settings.page_width > 1400 and section.settings.media_size == "small" %} product__info-wrapper--extra-padding{% endif %}">
       <div id="ProductInfo-{{ section.id }}" class="product__info-container{% if section.settings.enable_sticky_info %} product__info-container--sticky{% endif %}">
         {%- assign product_form_id = 'product-form-' | append: section.id -%}
 
         {%- for block in section.blocks -%}
           {%- case block.type -%}
+<<<<<<< HEAD
           {%- when 'product_pricing_table' -%}
             {% render 'product-pricing-table' %}
+=======
+          {%- when '@app' -%}
+            {% render block %}
+>>>>>>> a409f2f20b96a5ca41a9b99b238707be81cd4165
           {%- when 'text' -%}
             <p class="product__text{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}" {{ block.shopify_attributes }}>
               {{- block.settings.text -}}
             </p>
+<<<<<<< HEAD
+=======
+          {%- when 'title' -%}
+            <div class="product__title" {{ block.shopify_attributes }}>
+              <h1>{{ product.title | escape }}</h1>
+              <a href="{{ product.url }}" class="product__title">
+                <h2 class="h1">
+                  {{ product.title | escape }}
+                </h2>
+              </a>
+            </div>
+>>>>>>> a409f2f20b96a5ca41a9b99b238707be81cd4165
           {%- when 'price' -%}
             <div class="no-js-hidden" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
               {%- render 'price', product: product, use_variant: true, show_badges: true, price_class: 'price--large' -%}
@@ -300,6 +325,7 @@
           {%- when 'variant_picker' -%}
             {%- unless product.has_only_default_variant -%}
               {%- if block.settings.picker_type == 'button' -%}
+<<<<<<< HEAD
                 <div class="card">
                   <h2 class="h4 accordion__title">Modelos de la serie</h2>
                   <variant-radios class="no-js-hidden voltage-selector" data-section="{{ section.id }}" data-url="{{ product.url }}" {{ block.shopify_attributes }}>
@@ -322,6 +348,29 @@
                     </script>
                   </variant-radios>
                 </div>                
+=======
+                <variant-radios class="no-js-hidden" data-section="{{ section.id }}" data-url="{{ product.url }}" {{ block.shopify_attributes }}>
+                  {%- for option in product.options_with_values -%}
+                      <fieldset class="js product-form__input">
+                        <legend class="form__label">{{ option.name }}</legend>
+                        {%- for value in option.values -%}
+                          <input type="radio" id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
+                                name="{{ option.name }}"
+                                value="{{ value | escape }}"
+                                form="{{ product_form_id }}"
+                                {% if option.selected_value == value %}checked{% endif %}
+                          >
+                          <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
+                            {{ value }}
+                          </label>
+                        {%- endfor -%}
+                      </fieldset>
+                  {%- endfor -%}
+                  <script type="application/json">
+                    {{ product.variants | json }}
+                  </script>
+                </variant-radios>
+>>>>>>> a409f2f20b96a5ca41a9b99b238707be81cd4165
               {%- else -%}
                 <variant-selects class="no-js-hidden" data-section="{{ section.id }}" data-url="{{ product.url }}" {{ block.shopify_attributes }}>
                   {%- for option in product.options_with_values -%}
@@ -471,7 +520,11 @@
     </div>
   </div>
 
+<<<<<<< HEAD
   {% comment %} <product-modal id="ProductModal-{{ section.id }}" class="product-media-modal media-modal">
+=======
+  <product-modal id="ProductModal-{{ section.id }}" class="product-media-modal media-modal">
+>>>>>>> a409f2f20b96a5ca41a9b99b238707be81cd4165
     <div class="product-media-modal__dialog" role="dialog" aria-label="{{ 'products.modal.label' | t }}" aria-modal="true" tabindex="-1">
       <button id="ModalClose-{{ section.id }}" type="button" class="product-media-modal__toggle" aria-label="{{ 'accessibility.close' | t }}">{% render 'icon-close' %}</button>
 
@@ -498,7 +551,11 @@
         {%- endfor -%}
       </div>
     </div>
+<<<<<<< HEAD
   </product-modal> {% endcomment %}
+=======
+  </product-modal>
+>>>>>>> a409f2f20b96a5ca41a9b99b238707be81cd4165
 
   {% assign popups = section.blocks | where: "type", "popup" %}
   {%- for block in popups -%}
@@ -600,9 +657,13 @@
   "class": "section",
   "blocks": [
     {
+<<<<<<< HEAD
       "type": "product_pricing_table",
       "name": "Pricing Table",
       "limit": 1
+=======
+      "type": "@app"
+>>>>>>> a409f2f20b96a5ca41a9b99b238707be81cd4165
     },
     {
       "type": "text",

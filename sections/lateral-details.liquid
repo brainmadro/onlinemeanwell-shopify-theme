@@ -1,5 +1,6 @@
 <script src="{{ 'product-lateral-details.js' | asset_url }}" defer="defer"></script>
 
+<<<<<<< HEAD
 <script type="application/json" id="variants">
   {
     "product": {
@@ -37,16 +38,37 @@
     <img src="{{ current_variant.featured_image | product_img_url: 'large' }}" class="product_main_image">
     {%- for block in section.blocks -%}
       {%- case block.type -%}
+=======
+<div class="product_header-container">
+    
+    {% comment %} {{ product | json }} {% endcomment %}
+    <img src="{{ product.featured_image | product_img_url: 'large' }}" class="product_main_image">
+    {%- for block in section.blocks -%}
+      {%- case block.type -%}
+      {%- when '@app' -%}
+        {% render block %}
+>>>>>>> a409f2f20b96a5ca41a9b99b238707be81cd4165
       {%- when 'text' -%}
         <p class="product__text{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}" {{ block.shopify_attributes }}>
           {{- block.settings.text -}}
         </p>
       {%- when 'title' -%}
+<<<<<<< HEAD
         <div class="product-single__title" {{ block.shopify_attributes }}>
           <h1>{{ product.title | escape }}</h1>
         </div>
       {%- when 'description_title' -%}
         <h2 class="product-description-title" {{ block.shopify_attributes }}>{{ current_variant.metafields.digikey.product_description }} gasads</h2>
+=======
+        <div class="product__title" {{ block.shopify_attributes }}>
+          <h1>{{ product.title | escape }}</h1>
+          <a href="{{ product.url }}" class="product__title">
+            <h2 class="h1">
+              {{ product.title | escape }}
+            </h2>
+          </a>
+        </div>
+>>>>>>> a409f2f20b96a5ca41a9b99b238707be81cd4165
       {%- when 'price' -%}
         <div class="no-js-hidden" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
           {%- render 'price', product: product, use_variant: true, show_badges: true, price_class: 'price--large' -%}
@@ -303,16 +325,24 @@
 
         <script src="{{ 'pickup-availability.js' | asset_url }}" defer="defer"></script>
       {%- when 'rating' -%}
+<<<<<<< HEAD
         {%- if current_variant.metafields.reviews.rating.value != blank -%}
           {% liquid
            assign rating_decimal = 0
            assign decimal = current_variant.metafields.reviews.rating.value.rating | modulo: 1
+=======
+        {%- if product.metafields.reviews.rating.value != blank -%}
+          {% liquid
+           assign rating_decimal = 0
+           assign decimal = product.metafields.reviews.rating.value.rating | modulo: 1
+>>>>>>> a409f2f20b96a5ca41a9b99b238707be81cd4165
            if decimal >= 0.3 and decimal <= 0.7
             assign rating_decimal = 0.5
           elsif decimal > 0.7
             assign rating_decimal = 1
            endif
           %}
+<<<<<<< HEAD
           <div class="rating" role="img" aria-label="{{ 'accessibility.star_reviews_info' | t: rating_value: current_variant.metafields.reviews.rating.value, rating_max: current_variant.metafields.reviews.rating.value.scale_max }}">
             <span aria-hidden="true" class="rating-star color-icon-{{ settings.accent_icons }}" style="--rating: {{ current_variant.metafields.reviews.rating.value.rating | floor }}; --rating-max: {{ current_variant.metafields.reviews.rating.value.scale_max }}; --rating-decimal: {{ rating_decimal }};"></span>
           </div>
@@ -322,27 +352,54 @@
           <p class="rating-count caption">
             <span aria-hidden="true">({{ current_variant.metafields.reviews.rating_count }})</span>
             <span class="visually-hidden">{{ current_variant.metafields.reviews.rating_count }} {{ "accessibility.total_reviews" | t }}</span>
+=======
+          <div class="rating" role="img" aria-label="{{ 'accessibility.star_reviews_info' | t: rating_value: product.metafields.reviews.rating.value, rating_max: product.metafields.reviews.rating.value.scale_max }}">
+            <span aria-hidden="true" class="rating-star color-icon-{{ settings.accent_icons }}" style="--rating: {{ product.metafields.reviews.rating.value.rating | floor }}; --rating-max: {{ product.metafields.reviews.rating.value.scale_max }}; --rating-decimal: {{ rating_decimal }};"></span>
+          </div>
+          <p class="rating-text caption">
+            <span aria-hidden="true">{{ product.metafields.reviews.rating.value }} / {{ product.metafields.reviews.rating.value.scale_max }}</span>
+          </p>
+          <p class="rating-count caption">
+            <span aria-hidden="true">({{ product.metafields.reviews.rating_count }})</span>
+            <span class="visually-hidden">{{ product.metafields.reviews.rating_count }} {{ "accessibility.total_reviews" | t }}</span>
+>>>>>>> a409f2f20b96a5ca41a9b99b238707be81cd4165
           </p>
         {%- endif -%}
       {%- endcase -%}
     {%- endfor -%}
+<<<<<<< HEAD
     <div class="circle_progress_bar-container">
     <div class="wattage-circle_progress_bar circle_progress_bar">
         <span class="wattage_progress_bar-text"><i class="fas fa-bolt"></i><br>Wattage<br>{{ current_variant.metafields.digikey.power_watts }}</span>
+=======
+    <h1 class="product-single__title">{{ product.metafields.digikey.title_tag }}</h1>
+    <h2 class="product-description">{{ product.metafields.digikey.product_description }}</h2>
+    <div class="circle_progress_bar-container">
+    <div class="wattage-circle_progress_bar circle_progress_bar">
+        <span class="wattage_progress_bar-text"><i class="fas fa-bolt"></i><br>Wattage<br>{{ product.metafields.digikey.power_watts }}</span>
+>>>>>>> a409f2f20b96a5ca41a9b99b238707be81cd4165
         <svg>
                     <circle class="bg" cx="40" cy="40" r="37"></circle>
                     <circle id="wattage-pbar" class="progress one" cx="40" cy="40" r="37"></circle>
                 </svg>
     </div>
     <div class="current-circle_progress_bar circle_progress_bar">
+<<<<<<< HEAD
         <span class="current_progress_bar-text"><i class="fas fa-bolt"></i><br>Current<br>0~{{ current_variant.metafields.digikey.current_output_max }}</span>
+=======
+        <span class="current_progress_bar-text"><i class="fas fa-bolt"></i><br>Current<br>0~{{ product.metafields.digikey.current_output_max }}</span>
+>>>>>>> a409f2f20b96a5ca41a9b99b238707be81cd4165
         <svg>
                     <circle class="bg" cx="40" cy="40" r="37"></circle>
                     <circle id="current-pbar" class="progress two" cx="40" cy="40" r="37"></circle>
                 </svg>
     </div>
     <div class="voltage-circle_progress_bar circle_progress_bar">
+<<<<<<< HEAD
         <span class="voltage_progress_bar-text"><i class="fas fa-bolt"></i><br>Voltage<br>{{ current_variant.metafields.digikey.voltage_output_1 }}</span>
+=======
+        <span class="voltage_progress_bar-text"><i class="fas fa-bolt"></i><br>Voltage<br>{{ product.metafields.digikey.voltage_output_1 }}</span>
+>>>>>>> a409f2f20b96a5ca41a9b99b238707be81cd4165
         <svg>
                     <circle class="bg" cx="40" cy="40" r="37"></circle>
                     <circle id="voltage-pbar" class="progress three" cx="40" cy="40" r="37"></circle>
@@ -353,6 +410,7 @@
 <div class="product_details-container">
     <div class="product_detail-card">
     <span class="attribute_title">Wattage</span>
+<<<<<<< HEAD
     <span class="attribute_value">{{ current_variant.metafields.digikey.power_watts }}</span>
     </div>
     <div class="product_detail-card">
@@ -364,6 +422,19 @@
     <span class="attribute_value">{{ current_variant.metafields.digikey.voltage_output_1 }}</span>
     </div>
     {%- for attribute in current_variant.metafields.digikey  -%}
+=======
+    <span class="attribute_value">{{ product.metafields.digikey.power_watts }}</span>
+    </div>
+    <div class="product_detail-card">
+    <span class="attribute_title">Output Current</span>
+    <span class="attribute_value">0~{{ product.metafields.digikey.current_output_max }}</span>
+    </div>
+    <div class="product_detail-card">
+    <span class="attribute_title">Output Voltage</span>
+    <span class="attribute_value">{{ product.metafields.digikey.voltage_output_1 }}</span>
+    </div>
+    {%- for attribute in product.metafields.digikey  -%}
+>>>>>>> a409f2f20b96a5ca41a9b99b238707be81cd4165
     {% unless attribute[0] == 'power_watts' or attribute[0] == 'base_part_number' or attribute[0] == 'product_description' or attribute[0] == 'title_tag' or attribute[0] == 'current_output_max' or attribute[0] == 'voltage_output_1' %}
     <div class="product_detail-card">
         <span class="attribute_title">{{ attribute[0] | replace: '_', ' ' | capitalize }}</span>
@@ -385,11 +456,14 @@
       "limit": 1
     },
     {
+<<<<<<< HEAD
       "type": "description_title",
       "name": "t:sections.lateral-details.blocks.description_title.name",
       "limit": 1
     },
     {
+=======
+>>>>>>> a409f2f20b96a5ca41a9b99b238707be81cd4165
       "type": "text",
       "name": "t:sections.lateral-details.blocks.loading_properties.name",
       "limit": 1

@@ -82,7 +82,11 @@
         --media-shadow-vertical-offset: {{ settings.media_shadow_vertical_offset }}px;
         --media-shadow-blur-radius: {{ settings.media_shadow_blur }}px;
 
+<<<<<<< HEAD
         --page-width: 100%;
+=======
+        --page-width: {{ settings.page_width | divided_by: 10 }}rem;
+>>>>>>> a409f2f20b96a5ca41a9b99b238707be81cd4165
         --page-width-margin: {% if settings.page_width == '1600' %}2{% else %}0{% endif %}rem;
 
         --card-image-padding: {{ settings.card_image_padding | divided_by: 10.0 }}rem;
