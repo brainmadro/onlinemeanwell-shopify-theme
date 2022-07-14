@@ -8,13 +8,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/brainmadroOfficial/onlinemeanwell-shopify.git"
+    "url": "git+https://github.com/brainmadro/onlinemeanwell-shopify.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/brainmadroOfficial/onlinemeanwell-shopify/issues"
+    "url": "https://github.com/brainmadro/onlinemeanwell-shopify/issues"
   },
-  "homepage": "https://github.com/brainmadroOfficial/onlinemeanwell-shopify#readme",
+  "homepage": "https://github.com/brainmadro/onlinemeanwell-shopify#readme",
   "dependencies": {}
 }
