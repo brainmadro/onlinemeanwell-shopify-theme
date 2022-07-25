@@ -1,6 +1,6 @@
 # onlinemeanwell Shopify Theme
 
-This theme is mado for Online Store 2.0 so we recommend you use Shopify CLI instead of Themekit
+This theme is made for ***Online Store 2.0*** so we recommend you to use **Shopify CLI** instead of Themekit
 
 ## :dizzy: CSS
 
