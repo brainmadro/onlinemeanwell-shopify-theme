@@ -1,0 +1,5 @@
+.header__menu-item span {
+    transition: none;
+    text-decoration: none;
+    color: #70ade3;
+}
