@@ -39,8 +39,8 @@
   z-index: -1;
   border-radius: var(--card-corner-radius);
   box-shadow: var(--card-shadow-horizontal-offset) var(--card-shadow-vertical-offset) var(--card-shadow-blur-radius) rgba(var(--color-shadow), var(--card-shadow-opacity));
-  height:60%;
-  width:60%;
+  height:55%;
+  width:55%;
 }
 
 .card .card__inner .card__media {
