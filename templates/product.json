@@ -10,30 +10,30 @@
         },
         "description_title": {
           "type": "description_title",
-          "settings": {}
+          "settings": {
+          }
         },
         "loading-properties": {
           "type": "text",
           "settings": {
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "text_style": "body"
           }
         }
       },
       "block_order": [
-        "image",
         "title",
         "description_title",
         "loading-properties"
       ],
-      "settings": {}
+      "settings": {
+      }
     },
     "main": {
       "type": "main-product",
       "blocks": {
         "product_pricing_table": {
           "type": "product_pricing_table",
-          "settings": {}
+          "settings": {
+          }
         },
         "caption": {
           "type": "text",
