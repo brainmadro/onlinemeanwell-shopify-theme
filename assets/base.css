@@ -2624,7 +2624,7 @@ details[open] > .header__menu-item .icon-caret {
 
 .header__active-menu-item {
   transition: text-decoration-thickness var(--duration-short) ease;
-  color: rgb(var(--color-foreground));
+  color: white;
   text-decoration: underline;
   text-underline-offset: 0.3rem;
 }
@@ -2652,7 +2652,7 @@ details[open] > .header__menu-item .icon-caret {
 }
 
 .header__submenu .header__submenu {
-  background-color: rgba(var(--color-foreground), 0.03);
+  background-color: white;
   padding: 0.5rem 0;
   margin: 0.5rem 0;
 }
