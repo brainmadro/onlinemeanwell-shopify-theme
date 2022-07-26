@@ -26,6 +26,8 @@
   border: var(--card-border-width) solid rgba(var(--color-foreground), var(--card-border-opacity));
   position: relative;
   box-sizing: border-box;
+  height:55%;
+  width:55%;
 }
 
 .card--card:after,
@@ -39,8 +41,6 @@
   z-index: -1;
   border-radius: var(--card-corner-radius);
   box-shadow: var(--card-shadow-horizontal-offset) var(--card-shadow-vertical-offset) var(--card-shadow-blur-radius) rgba(var(--color-shadow), var(--card-shadow-opacity));
-  height:55%;
-  width:55%;
 }
 
 .card .card__inner .card__media {
