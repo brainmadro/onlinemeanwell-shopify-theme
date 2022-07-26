@@ -2223,6 +2223,7 @@ input[type='checkbox'] {
 
 .header-wrapper--border-bottom {
   border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.08);
+  background-color: red;
 }
 
 .header {
@@ -2230,7 +2231,6 @@ input[type='checkbox'] {
   grid-template-areas: 'left-icon heading icons';
   grid-template-columns: 1fr 2fr 1fr;
   align-items: center;
-  background-color: red;
 }
 
 @media screen and (min-width: 990px) {
@@ -2730,8 +2730,6 @@ details-disclosure > details {
 }
 
 .gradient {
-  background: rgb(var(--color-background));
-  background: var(--gradient-background);
   background-attachment: fixed;
 }
 
