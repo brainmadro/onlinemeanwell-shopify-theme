@@ -1,0 +1,12 @@
+<div class="product-pricing-table card">
+  <h2 class="h4 accordion__title">Precios (USD)</h2>
+  {{ product.metafields.digikey.serie_models }}
+  {% if product.metafields.digikey.serie_models %}
+    {%- for attribute in product.metafields.digikey.serie_models  -%}
+      <div class="product-serie-models">
+          <span class="attribute_title">{{ attribute[0] | replace: '_', ' ' | capitalize }}</span>
+          <span class="attribute_value">{{ attribute[1] }}</span>
+      </div>
+    {%- endfor -%}
+  {% endif %}
+</div>
