@@ -46,7 +46,7 @@
           <h1>{{ product.title | escape }}</h1>
         </div>
       {%- when 'description_title' -%}
-        <h2 class="product-description-title" {{ block.shopify_attributes }}>{{ current_variant.metafields.digikey.product_description }} gasads</h2>
+        <h2 class="product-description-title" {{ block.shopify_attributes }}>{{ current_variant.metafields.digikey.product_description }}AC/DC CONVERTER 12V 150W</h2>
       {%- when 'price' -%}
         <div class="no-js-hidden" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
           {%- render 'price', product: product, use_variant: true, show_badges: true, price_class: 'price--large' -%}
