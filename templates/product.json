@@ -33,7 +33,8 @@
         "product_pricing_table": {
           "type": "product_pricing_table",
           "settings": {
-            "text": "TABLA1"
+            "text": "{{ product.metafields.descriptors.subtitle.value }}",
+            "text_style": "subtitle"
           }
         },
         "caption": {
@@ -46,6 +47,8 @@
         "price": {
           "type": "price",
           "settings": {
+            "text": "500",
+            "text_style":"subtitle"
           }
         },
         "variant_picker": {
