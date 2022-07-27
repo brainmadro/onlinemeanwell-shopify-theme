@@ -27,12 +27,23 @@
 .attribute_title {
   color: #929292;
   font-size: 0.75em;
+  margin-left: 10%;
 }
 
 .attribute_value {
-  font-size: 1.5em;
+  font-size: 1em;
+  display: block;
+  text-align: center;
 }
-
+.table{
+  border: hidden;
+}
+.table th{
+  padding-left: 5%;
+}
+.table td{
+  padding-left: 5%;
+}
 #shopify-section-footer {
   display: none;
 }
