@@ -33,6 +33,7 @@
         "product_pricing_table": {
           "type": "product_pricing_table",
           "settings": {
+            "text": "TABLA1"
           }
         },
         "caption": {
