@@ -50,6 +50,7 @@
   color: #E73127;
   font-weight: bold;
   height: 2.5em;
+  cursor: pointer;
 }
 
 .card--card {
