@@ -327,10 +327,10 @@
                     -%}
                     <div class="voltage-selector-series-flex">
                       <h4>{{product.title}}</h4>
-                      <span>{{current_variant.metafields.digikey.voltage_output_1}}V</span>
+                      <span>{{current_variant.metafields.digikey.voltage_output_1}} V0</span>
                     </div>
-                    <span>Potencia {{current_variant.metafields.digikey.power_watts}}</span>
-                    <span>  Corriente Salida: 0 10</span>
+                    <span class="voltage-selector-series-span">Potencia {{current_variant.metafields.digikey.power_watts}}</span>
+                    <span class="voltage-selector-series-span">  Corriente Salida: 0 10</span>
                   </div>
                 </div>                
               {%- else -%}
