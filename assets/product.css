@@ -55,6 +55,10 @@
   border-radius: 1000px;
   color: #fff;
   margin: 0px 10px 10px 0px;
+  cursor: pointer;
+}
+.button-tecnic:hover{
+  background-color: #070606;
 }
 .ficha-span{
   float: left;
