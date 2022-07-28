@@ -27,14 +27,29 @@
   display: flex;
   flex-direction: column;
   height: 100%;
+  margin-top: 1.5%;
+  width: 30%;
 }
 .card-form h1{
   color: #fff;
+  margin: 2% 1%;
 }
 .input-form{
   border-radius: 5px;
   margin-bottom: 5px;
   height: 30px;
+}
+.input-textarea{
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+.boton-form{
+  border-radius: 5px;
+  margin-bottom: 5px;
+  background-color: #fff;
+  color: #E73127;
+  font-weight: bold;
+  height: 2.5em;
 }
 
 .card--card {
