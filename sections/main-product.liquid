@@ -321,6 +321,17 @@
                       {{ product.variants | json }}
                     </script>
                   </variant-radios>
+                  <div class="voltage-selector-series">
+                    {%- liquid 
+                      assign current_variant = product.selected_or_first_available_variant
+                    -%}
+                    <div class="voltage-selector-series-flex">
+                      <h4>{{product.title}}</h4>
+                      <span>{{current_variant.metafields.digikey.voltage_output_1}}V</span>
+                    </div>
+                    <span>Potencia {{current_variant.metafields.digikey.power_watts}}</span>
+                    <span>  Corriente Salida: 0 10</span>
+                  </div>
                 </div>                
               {%- else -%}
                 <variant-selects class="no-js-hidden" data-section="{{ section.id }}" data-url="{{ product.url }}" {{ block.shopify_attributes }}>
@@ -371,7 +382,6 @@
                     {%- endfor -%}
                   </select>
                   {% render 'icon-caret' %}
-                  <h1>PRODUCTOS RECOMENDADOS</h1>
                 </div>
               </div>
             </noscript>
