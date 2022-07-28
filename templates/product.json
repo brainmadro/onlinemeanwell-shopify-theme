@@ -37,6 +37,13 @@
             "text_style": "subtitle"
           }
         },
+        "quotation_form": {
+          "type": "quotation_form",
+          "settings": {
+            "text": "{{ product.metafields.descriptors.subtitle.value }}",
+            "text_style": "subtitle"
+          }
+        },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
@@ -47,7 +54,7 @@
       "block_order": [
         "variant_picker",
         "product_pricing_table",
-        "quantity_selector"
+        "quotation_form"
       ],
       "settings": {
         "enable_sticky_info": true,
