@@ -179,6 +179,8 @@
           {%- case block.type -%}
           {%- when 'product_pricing_table' -%}
             {% render 'product-pricing-table' %}
+          {%- when 'quotation_form' -%}
+            {% render 'product-quotation-form' %}
           {%- when 'text' -%}
             <p class="product__text{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}" {{ block.shopify_attributes }}>
               {{- block.settings.text -}}
@@ -617,6 +619,11 @@
     {
       "type": "product_pricing_table",
       "name": "Pricing Table",
+      "limit": 1
+    },
+    {
+      "type": "quotation_form",
+      "name": "Quotation Form",
       "limit": 1
     },
     {
