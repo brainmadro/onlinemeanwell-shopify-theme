@@ -16,7 +16,10 @@
   background-color: #fafafe;
   height: calc(100vh - 85px);
 }
-
+.product-pricing-table{
+  width: 40%;
+  background-color: #fff;
+}
 .product__info-container {
   display: flex;
   row-gap: 1em;
