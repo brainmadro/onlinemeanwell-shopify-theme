@@ -35,7 +35,7 @@
   "TotalPrice": 1375
 }
 ], -->
-<div class="product-pricing-table card">
+<div class="product-pricing-table card-pricing">
   <h2 class="h4 accordion__title">Precios (USD)</h2>
   {% assign attributesHeader = "Qty,Unit Price,Ext.Price" | split:',' %}
   {% assign attributesQty = "1,10,25,50,100,250,500,1000" | split:',' %}
@@ -57,28 +57,21 @@
     </tr>
     {% endfor %}
   </table>
-  
-  {% if product.selected_or_first_available_variant.metafields.digikey.serie_models %}
-    {%- for attribute in product.selected_or_first_available_variant.metafields.digikey.serie_models  -%}
-      <div class="product-serie-models">
-          <span class="attribute_title">{{ attribute[0] | replace: '_', ' ' | capitalize }}</span>
-          <span class="attribute_value">{{ attribute[1] }}</span>
-      </div>
-    {%- endfor -%}
-  {% endif %}
 </div>
-<div class="card-form">
-  <h1>Obtega su cotizacion</h1>
-  <input class="input-form" type="text" placeholder="Nombre">
-  <input class="input-form" type="email" placeholder="Correo">
-  <input class="input-form" type="tel" placeholder="Telefono">
-  <input class="input-form" type="text" placeholder="Empresa">
-  <input class="input-form" type="text" placeholder="Cuidad">
-  <textarea class="input-textarea" cols="3" rows="3" placeholder="Mensaje"></textarea>
-  <button class="boton-form">Enviar</button>
-</div>
-<div class="card">
-  <h2 class="h4 accordion__title">Ficha Tecnica</h2> 
-  <button class="button-tecnic">□</button> <span class="ficha-span">Descargar Ficha Tecnica</span>
-  <button class="button-tecnic">□</button> <span>Ver Ficha Tecnica</span>
+<div class="">
+  <div class="card-form">
+    <h1>Obtega su cotizacion</h1>
+    <input class="input-form" type="text" placeholder="Nombre">
+    <input class="input-form" type="email" placeholder="Correo">
+    <input class="input-form" type="tel" placeholder="Telefono">
+    <input class="input-form" type="text" placeholder="Empresa">
+    <input class="input-form" type="text" placeholder="Cuidad">
+    <textarea class="input-textarea" cols="3" rows="3" placeholder="Mensaje"></textarea>
+    <button class="boton-form">Enviar</button>
+  </div>
+  <div class="card-ficha-tecnica">
+    <h2 class="h4 accordion__title">Ficha Tecnica</h2> 
+    <span class="ficha-span"><button class="button-tecnic">□</button>Descargar Ficha Tecnica</span>
+    <span class="ficha-span"><button class="button-tecnic">□</button> <span>Ver Ficha Tecnica</span>
+  </div>
 </div>
