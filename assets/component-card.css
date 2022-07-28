@@ -14,7 +14,19 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  width: 48%;
+}
+.card-form{
+  text-align: var(--card-text-alignment);
+  text-decoration: none;
+  background-color: #E73127;
+  border-radius: 8px;
+  padding: 1.5em;
+  color: #fff;
+}
+.card-form:not(.ratio){
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .card--card {
