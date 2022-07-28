@@ -202,7 +202,7 @@
   overflow-y: scroll;
   overflow-x: hidden;
   padding-bottom: 1em;
-  position: absolute;
+  position: fixed;
   top: 0;
   width: 20%;
   z-index: 10;
