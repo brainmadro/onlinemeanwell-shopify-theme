@@ -37,20 +37,6 @@
             "text_style": "subtitle"
           }
         },
-        "caption": {
-          "type": "text",
-          "settings": {
-            "text": "{{ product.metafields.descriptors.subtitle.value }}",
-            "text_style": "subtitle"
-          }
-        },
-        "price": {
-          "type": "price",
-          "settings": {
-            "text": "500",
-            "text_style":"subtitle"
-          }
-        },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
@@ -61,16 +47,7 @@
       "block_order": [
         "variant_picker",
         "product_pricing_table",
-        "caption",
-        "price",
-        "quantity_selector",
-        "buy_buttons",
-        "description",
-        "collapsible-row-0",
-        "collapsible-row-1",
-        "collapsible-row-2",
-        "collapsible-row-3",
-        "share"
+        "quantity_selector"
       ],
       "settings": {
         "enable_sticky_info": true,
