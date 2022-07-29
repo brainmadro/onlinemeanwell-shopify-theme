@@ -352,16 +352,16 @@
 </div>
 <div class="product_details-container">
     <div class="product_detail-card">
-    <span class="attribute_title">Wattage</span>
-    <span class="attribute_value">{{ current_variant.metafields.digikey.power_watts }}</span>
+      <span class="attribute_title">Wattage</span>
+      <span class="attribute_value">{{ current_variant.metafields.digikey.power_watts }}</span>
     </div>
     <div class="product_detail-card">
-    <span class="attribute_title">Output Current</span>
-    <span class="attribute_value">0~{{ current_variant.metafields.digikey.current_output_max }}</span>
+      <span class="attribute_title">Output Current</span>
+      <span class="attribute_value">0~{{ current_variant.metafields.digikey.current_output_max }}</span>
     </div>
     <div class="product_detail-card">
-    <span class="attribute_title">Output Voltage</span>
-    <span class="attribute_value">{{ current_variant.metafields.digikey.voltage_output_1 }}</span>
+      <span class="attribute_title">Output Voltage</span>
+      <span class="attribute_value">{{ current_variant.metafields.digikey.voltage_output_1 }}</span>
     </div>
     {%- for attribute in current_variant.metafields.digikey  -%}
     {% unless attribute[0] == 'power_watts' or attribute[0] == 'base_part_number' or attribute[0] == 'product_description' or attribute[0] == 'title_tag' or attribute[0] == 'current_output_max' or attribute[0] == 'voltage_output_1' %}
