@@ -1,13 +1,12 @@
 .card {
   background-color: #fff;
   border-radius: 8px;
-  padding: 1.5em;
+  padding: 0.5em;
 }
 
 .voltage-selector {
   background-color: #fafafe;
   border-radius: 50px;
-  padding: 0.3em;
   margin-bottom: 5%;
 }
 .voltage-selector-series{
