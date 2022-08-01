@@ -14,7 +14,7 @@
 .recommendation-img{
   width: 100%;
   height: 100%;
-  margin-bottom: 5%;
+  margin-bottom: 15%;
 }
 .card-recommendations{
   text-align: var(--card-text-alignment);
