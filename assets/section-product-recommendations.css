@@ -39,6 +39,9 @@
   padding: 0%;
   width: 16%;
   display: inline-block;
+  border: 2px dashed black;
+  text-align: center;
+
 }
 
 
