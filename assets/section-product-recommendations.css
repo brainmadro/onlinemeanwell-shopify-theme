@@ -30,4 +30,8 @@
   display: inline-block;
   flex-direction: column;
 }
+.conteiner-recommendations{
+  background: #fff;
+  padding: 2%;
+}
 
