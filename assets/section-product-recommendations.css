@@ -12,8 +12,8 @@
   margin-bottom: 3rem;
 }
 .recommendation-img{
-  width: 10%;
-  height: 10%;
+  width: 40%;
+  height: 40%;
 }
 .card-recommendations{
   text-align: var(--card-text-alignment);
@@ -34,4 +34,12 @@
   background: #fff;
   padding: 2%;
 }
+.container-float{
+  margin: 0%;
+  padding: 0%;
+  width: 25%;
+  display: inline-block;
+}
+
+
 
