@@ -202,7 +202,7 @@
   padding: 10px 15px;
   text-align: center;
 }
-
+/*contenedor para los detalles del producto*/
 .product_details-container {
   display: flex;
   flex-wrap: wrap;
@@ -213,13 +213,16 @@
   height: 42%;
 	overflow-y: scroll;
 }
+/*estilos de la scroll bar para los detalles del producto*/
 .product_details-container::-webkit-scrollbar{
   width: 10px;
-  background-color: #E73127;
+  background-color: #f4160a;
 }
 .product_details-container::-webkit-scrollbar-thumb{
   background: rgb(31, 29, 29);
-  height: 3px;
+}
+.product_details-container::-webkit-scrollbar-thumb{
+  background: rgb(31, 29, 29);
 }
 
 .product-lateral-details {
