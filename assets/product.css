@@ -210,6 +210,8 @@
   margin: auto;
   max-width: 350px;
   width: 90%;
+  height: 300px;
+	overflow-y: scroll;
 }
 
 .product-lateral-details {
