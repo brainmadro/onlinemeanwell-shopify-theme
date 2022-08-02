@@ -400,6 +400,7 @@ h5,
 h1,
 .h1 {
   font-size: calc(var(--font-heading-scale) * 2rem);
+  margin: 0% 0% 4% 0%;
 }
 
 @media only screen and (min-width: 750px) {
@@ -408,12 +409,14 @@ h1,
     font-size: calc(var(--font-heading-scale) * 2.5rem);
     color: red;
     font-weight: 700;
+    margin: 0% 0% 4% 0%;
   }
 }
 
 h2,
 .h2 {
   font-size: calc(var(--font-heading-scale) * 1rem);
+  margin: 0%;
 }
 
 @media only screen and (min-width: 750px) {
@@ -421,6 +424,7 @@ h2,
   .h2 {
     font-size: calc(var(--font-heading-scale) * 1.5rem);
     font-weight: bolder;
+    margin: 0%;
   }
 }
 
@@ -838,6 +842,7 @@ summary::-webkit-details-marker {
 .focus-none {
   box-shadow: none !important;
   outline: 0 !important;
+  background-color: #fafafe;
 }
 
 .focus-offset:focus-visible {
