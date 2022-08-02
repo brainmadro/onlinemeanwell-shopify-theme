@@ -261,7 +261,7 @@
 }
 
 .product_main_image {
-  max-width: 300px;
+  max-width: 100%;
 }
 
 .product-single__title {
