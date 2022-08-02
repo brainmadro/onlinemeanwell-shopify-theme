@@ -350,7 +350,6 @@
     </div>
 </div>
 <div class="product_details-container">
-   
     <div class="product_detail-card">
       <span class="attribute_title">Wattage</span>
       <span class="attribute_value">{{ current_variant.metafields.digikey.power_watts }}</span>
@@ -369,7 +368,6 @@
         <span class="attribute_title">{{ attribute[0] | replace: '_', ' ' | capitalize }}</span>
         <span class="attribute_value">{{ attribute[1] }}</span>
     </div>
-    <div>
     {% endunless %}
     {%- endfor -%}
 </div>
