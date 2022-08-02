@@ -44,12 +44,13 @@
   background: #fff;
   padding: 2%;
 }
+/*contenedor para que la carta este al lado de la otra carta*/
 .container-float{
   margin: 0%;
   padding: 0%;
   width: 16%;
   display: inline-block;
-  border: 2px dashed black;
+  border: 2px dashed gray;
   text-align: center;
 }
 
