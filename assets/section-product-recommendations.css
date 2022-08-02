@@ -16,6 +16,10 @@
   height: 100%;
   padding: 15%;
 }
+.text-recommendation{
+  background-color: gray;
+  
+}
 .card-recommendations{
   text-align: var(--card-text-alignment);
   text-decoration: none;
