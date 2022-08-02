@@ -66,6 +66,10 @@
   height: 2.5em;
   cursor: pointer;
 }
+.boton-form:hover{
+  background-color: #E73127;
+  color: #fff;
+}
 /*contenedor ficha tecnica*/
 .card-ficha-tecnica{
   text-align: var(--card-text-alignment);
