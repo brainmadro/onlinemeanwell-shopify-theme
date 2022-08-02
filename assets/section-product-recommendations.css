@@ -15,7 +15,7 @@
 .recommendation-img{
   width: 100%;
   height: 100%;
-  padding: 15%;
+  padding: 15% 15% 0% 15%;
 }
 /*texto debajo de la imagen*/
 .text-recommendation{
