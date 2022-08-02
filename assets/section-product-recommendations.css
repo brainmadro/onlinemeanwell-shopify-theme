@@ -16,9 +16,11 @@
   height: 100%;
   padding: 15%;
 }
+/*texto debajo de la imagen*/
 .text-recommendation{
   background-color: gray;
-  
+  height: 3em;
+  width: 100%;
 }
 .card-recommendations{
   text-align: var(--card-text-alignment);
