@@ -329,8 +329,8 @@
                   {%- for option in product.options_with_values -%}
                     {%- for value in option.values -%}
                       <div class="voltage-selector-series-flex">
-                        <h4>{{product.title}}</h4>
-                        <span>{{current_variant.metafields.digikey.voltage_output_1}} V0</span>
+                        <h4>LRS-150-{{value}}</h4>
+                        <span>{{value}} 0</span>
                       </div>
                       <span class="voltage-selector-series-span">Potencia {{current_variant.metafields.digikey.power_watts}}</span>
                       <span class="voltage-selector-series-span">  Corriente Salida: 0 10</span>
