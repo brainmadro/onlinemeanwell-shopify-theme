@@ -36,11 +36,6 @@
             "picker_type": "button"
           }
         },
-        "product_pricing_table": {
-          "type": "product_pricing_table",
-          "settings": {
-          }
-        },
         "quotation_form": {
           "type": "quotation_form",
           "settings": {
@@ -49,7 +44,6 @@
       },
       "block_order": [
         "variant_picker",
-        "product_pricing_table",
         "quotation_form"
       ],
       "settings": {
