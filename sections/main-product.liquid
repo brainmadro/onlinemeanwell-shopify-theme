@@ -10,7 +10,6 @@
     <link id="ModelViewerOverride" rel="stylesheet" href="{{ 'component-model-viewer-ui.css' | asset_url }}" media="print" onload="this.media='all'">
   {%- endif -%}
   <!---Esta parte de aca para abjo es para poder enderizar las variantes cada vez ue se de click a alguna-->
-    <div class="grid__item product__media-wrapper">
       <media-gallery id="MediaGallery-{{ section.id }}" role="region" {% if section.settings.enable_sticky_info %}class="product__media-gallery"{% endif %} aria-label="{{ 'products.product.media.gallery_viewer' | t }}" data-desktop-layout="{{ section.settings.gallery_layout }}">
         <div id="GalleryStatus-{{ section.id }}" class="visually-hidden" role="status"></div>
         <slider-component id="GalleryViewer-{{ section.id }}" class="slider-mobile-gutter">
