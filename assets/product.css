@@ -5,7 +5,10 @@
 body{
   font-family: Sofia Pro;
 }
-
+/*agregando iconos*/
+.font-size{
+  font-size: 150%;
+}
 .accordion__title {
   color: #E73127;
   font-size: 1.5em;
