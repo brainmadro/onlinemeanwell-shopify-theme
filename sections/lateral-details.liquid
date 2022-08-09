@@ -45,7 +45,6 @@
           <h1>{{ product.title | escape }}</h1>
         </div>
       {%- when 'description_title' -%}
-        <div role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" style="--value:65"></div>
         <h2 class="product-description-title" {{ block.shopify_attributes }}>{{ current_variant.metafields.digikey.product_description }}AC/DC CONVERTER 12V 150W</h2>
       {%- when 'price' -%}
         <div class="no-js-hidden" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
