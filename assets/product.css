@@ -2,6 +2,9 @@
   font-family: Sofia Pro;
   src: url(../Sofia/Sofia\ Pro\ Regular\ Az.otf);
 }
+*{
+  font-family: Sofia Pro;
+}
 .accordion__title {
   color: #E73127;
   font-size: 1.5em;
