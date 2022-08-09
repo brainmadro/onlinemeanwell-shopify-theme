@@ -1,3 +1,9 @@
+/*llamando la fuente sofia pro*/
+@font-face {
+  font-family: Sofia Pro;
+  src: url(../Sofia/Sofia\ Pro\ Regular\ Az.otf);
+}
+
 .card {
   background-color: #fff;
   border-radius: 8px;
