@@ -337,7 +337,7 @@
                     {% for variant in product.variants %}
                       <div class="voltage-selector-series-flex">
                         <h4>LRS-150-{{variant.title}}</h4>
-                        <span>{{variant.title}} V 0</span>
+                        <span>{{variant.title}} V <i class="fa-solid fa-bolt"></i></span>
                       </div>
                       <span class="voltage-selector-series-span">Potencia {{variant.metafields.digikey.power_watts}}</span>
                       <span class="voltage-selector-series-span">  Corriente Salida: 0 10</span>
