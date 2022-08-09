@@ -1,8 +1,15 @@
+<head>
+  <script src="https://kit.fontawesome.com/a9cfc4b633.js" crossorigin="anonymous"></script>
+  <!-- our project just needs Font Awesome Solid + Brands -->
+  <link href="../fontawesome/css/fontawesome.css" rel="stylesheet">
+  <link href="../fontawesome/css/brands.css" rel="stylesheet">
+  <link href="../fontawesome/css/solid.css" rel="stylesheet">
+</head>
 <section id="MainProduct-{{ section.id }}" class="page-width section-{{ section.id }}-padding product-main-container" data-section="{{ section.id }}">
   {{ 'product.css' | asset_url | stylesheet_tag }}
 
   <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
-  
+  <link href="../fontawesome/css/all.css" rel="stylesheet">
   {%- assign first_3d_model = product.media | where: "media_type", "model" | first -%}
   {%- if first_3d_model -%}
     {{ 'component-product-model.css' | asset_url | stylesheet_tag }}
@@ -300,6 +307,9 @@
             {%- unless product.has_only_default_variant -%}
               {%- if block.settings.picker_type == 'button' -%}
                 <div class="card">
+                  <h1>Aca iria el icono</h1>
+                  <i class="fa-solid fa-user">Icono</i>
+                  <i class="fa-solid fa-user"></i>
                   <h2 class="h4 accordion__title">Modelos de la serie</h2> 
                   <variant-radios class="no-js-hidden voltage-selector" data-section="{{ section.id }}" data-url="{{ product.url }}" {{ block.shopify_attributes }}>
                     {%- for option in product.options_with_values -%}
@@ -483,7 +493,6 @@
       </div>
     </div>
   </div>
-
   {% comment %} <product-modal id="ProductModal-{{ section.id }}" class="product-media-modal media-modal">
     <div class="product-media-modal__dialog" role="dialog" aria-label="{{ 'products.modal.label' | t }}" aria-modal="true" tabindex="-1">
       <button id="ModalClose-{{ section.id }}" type="button" class="product-media-modal__toggle" aria-label="{{ 'accessibility.close' | t }}">{% render 'icon-close' %}</button>
