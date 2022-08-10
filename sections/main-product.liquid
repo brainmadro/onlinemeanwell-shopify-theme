@@ -312,7 +312,7 @@
                     {%- for option in product.options_with_values -%}
                         <fieldset class="fielset-none">
                           {%- for value in option.values -%}
-                          <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}" class="container">
+                          <label onclick="location.reload()" for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}" class="container">
                             <input type="radio" " id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
                               name="{{ option.name }}"
                               value="{{ value | escape }}"
