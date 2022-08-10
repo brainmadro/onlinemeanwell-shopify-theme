@@ -313,7 +313,7 @@
                         <fieldset class="fielset-none">
                           {%- for value in option.values -%}
                           <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}" class="container">
-                            <input type="radio" id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
+                            <input type="radio" " id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
                               name="{{ option.name }}"
                               value="{{ value | escape }}"
                               form="{{ product_form_id }}"
