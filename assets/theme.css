@@ -1,10 +1,10 @@
 /*llamando la fuente sofia pro*/
 @font-face {
-  font-family: Sofia Pro;
-  src: url(../Sofia/Sofia\ Pro\ Regular\ Az.otf);
+  font-family: 'Sofia Pro';
+  src: url(../Sofia/SofiaPro.otf);
 }
 body{
-  font-family: Sofia Pro;
+  font-family: 'Sofia Pro';
 }
 .card {
   background-color: #fff;
@@ -25,7 +25,6 @@ body{
 }
 .voltage-selector-series-span{
   margin: 3% 5% 3% 1%;
-  font-weight: bolder;
   color: #acabab;
 }
 .voltage-selector-series h4{
@@ -68,6 +67,7 @@ body{
   justify-content: center;
   height: 2.7em;
   width: 2.7em;
+  font-family: var(--font-heading-family);
 }
 
 /* On mouse-over, add a grey background color */

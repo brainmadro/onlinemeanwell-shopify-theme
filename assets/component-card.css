@@ -14,6 +14,7 @@
   display: flex;
   flex-direction: column;
   height: 100%;
+  font-family: var(--font-heading-family);
 }
 .card-form{
   text-align: var(--card-text-alignment);
@@ -80,6 +81,7 @@
 }
 .card-ficha-tecnica:not(.ratio){
   display: grid;
+  font-family: var(--font-heading-family);
 }
 .card--card {
   height: 100%;

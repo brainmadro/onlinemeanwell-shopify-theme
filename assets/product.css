@@ -1,9 +1,9 @@
 @font-face {
-  font-family: Sofia Pro;
-  src: url(../Sofia/Sofia\ Pro\ Regular\ Az.otf);
+  font-family: 'Sofia Pro';
+  src: url(../Sofia/SofiaPro.otf);
 }
 body{
-  font-family: Sofia Pro;
+  font-family: 'Sofia Pro';
 }
 .quatation-tecnic{
   width: 35%;
@@ -51,7 +51,8 @@ body{
   font-size: 1.21em;
   display: block;
   text-align: center;
-  font-weight: bolder;
+  font-family: var(--font-heading-family);
+  font-weight: 500;
 }
 
 /*tabla de precios*/
