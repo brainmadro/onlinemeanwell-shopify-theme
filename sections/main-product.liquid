@@ -334,7 +334,9 @@
                       assign current_variant = product.selected_or_first_available_variant
                     -%}
                     <!--Recorro todas las variantes disponibles-->
+                    <h1>LRS-150-{{current_variant.digikey.title}}</h1>
                     {% for variant in product.variants %}
+                      <h1>{{variant.title}}</h1>
                       <div class="voltage-selector-series-flex">
                         <h4>LRS-150-{{variant.title}}</h4>
                         <span>{{variant.title}} V <i class="fa-solid fa-bolt"></i></span>
