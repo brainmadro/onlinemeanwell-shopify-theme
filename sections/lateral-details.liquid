@@ -366,7 +366,6 @@
     {% unless attribute[0] == 'power_watts' or attribute[0] == 'base_part_number' or attribute[0] == 'product_description' or attribute[0] == 'title_tag' or attribute[0] == 'current_output_max' or attribute[0] == 'voltage_output_1' %}
     <div class="product_detail-card">
       {%if attribute[0] != "ficha_tecnica"%}
-        <h1>{{attribute[0]}}AcA ES </h1>
         <span class="attribute_title">{{ attribute[0] | replace: '_', ' ' | capitalize }}</span>
         <span class="attribute_value">{{ attribute[1] }}</span>
         {%endif%}
