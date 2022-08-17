@@ -1,3 +1,39 @@
+<script>
+ window.onload = function () {    
+    document.getElementById("download")        
+      .addEventListener("click", () => {   
+        setInterval(location.reload(),1000);      
+    })
+ }
+</script>
+
+<button class="js-download-link button" onclick="downloadFile('https://wattswork.s3.amazonaws.com/test-media/PDFs/test-file.pdf','tfile.pdf'); return false;">Download PDF File</button>        
+
+<button class="js-download-link button" onclick="downloadFile('https://wattswork.s3.amazonaws.com/test-media/Text/test-file.txt','file.txt'); return false;">Download TXT File</button>
+
+<script type="text/javascript">
+  function downloadFile(data, fileName, type="text/plain") {
+    // Create an invisible A element
+    const a = document.createElement("a");
+    a.style.display = "none";
+    document.body.appendChild(a);
+
+    // Set the HREF to a Blob representation of the data to be downloaded
+    a.href = window.URL.createObjectURL(
+      new Blob([data], { type })
+    );
+
+    // Use download attribute to set set desired file name
+    a.setAttribute("download", fileName);
+
+    // Trigger the download by simulating click
+    a.click();
+
+    // Cleanup
+    window.URL.revokeObjectURL(a.href);
+    document.body.removeChild(a);
+  }
+</script>
 <div class="quatation-tecnic">
     <div class="card-form">
       <h1>Obtega su cotizacion</h1>
@@ -14,9 +50,14 @@
       {%- liquid 
         assign current_variant = product.selected_or_first_available_variant
       -%}
+      <div>
+        <button id="downland">dowland pdf</button>
+      </div>
+      <div id="invoice">
+
+      </div>
       <h1>{{current_varinat.metafields.digikey.ficha_tecnica}}</h1>
-      <span class="ficha-span"><a download="LRS-150.pdf" href="{{current_varinat.metafields.digikey.ficha_tecnica}}"  ><button class="button-tecnic"><i class="fa-solid fa-file-arrow-down font-size"></i></button></a>Descargar Ficha Técnica</span>
-      <span class="ficha-span"><a href="./Files/LRS-150-spec.pdf" download="LRS-150.pdf" ><button class="button-tecnic"><i class="fa-solid fa-file-arrow-down font-size"></i></button></a>Descargar Ficha Técnica</span>
+      <span class="ficha-span"><a download="LRS-150.pdf" href="https://www.meanwellusa.com/upload/pdf/LRS-150/LRS-150-spec.pdf"><button class="button-tecnic"><i class="fa-solid fa-file-arrow-down font-size"></i></button></a>Descargar Ficha Técnica</span>
       <span class="ficha-span"><a href="https://www.meanwellusa.com/upload/pdf/LRS-150/LRS-150-spec.pdf"><button class="button-tecnic"><i class="fa-solid fa-file-pdf font-size" ></i></button></a>Ver Ficha Técnica</span>
     </div>
 </div>
