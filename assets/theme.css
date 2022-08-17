@@ -27,10 +27,11 @@ body{
   margin: 3% 5% 3% 1%;
   color: #acabab;
 }
-.voltage-selector-series h4{
+.voltage-selector-series-h4{
   font-weight: 900;
   font-size: 20px;
   margin: 3% 30% 3% 1%;
+  font: 'Sofia Pro';
 }
 .voltage-selector-series-flex{
   display: flex;
@@ -67,7 +68,6 @@ body{
   justify-content: center;
   height: 2.7em;
   width: 2.7em;
-  font-family: var(--font-heading-family);
 }
 
 /* On mouse-over, add a grey background color */
