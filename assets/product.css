@@ -371,6 +371,7 @@ div[role="progressbar"]::before {
   .product_details-container{
     background-color: whitesmoke;
     height: 26%;
+    width: 100%;
   }
   .product-main-container {
      margin-left: 0%; 
