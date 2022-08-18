@@ -376,7 +376,7 @@
 .card-article-info {
   margin-top: 1rem;
 }
-/**/
+/*diseño responsive*/
 @media only screen and (max-width:749px) {
   .card-form:not(.ratio) {
     width: 88vw;
