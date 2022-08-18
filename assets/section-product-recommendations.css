@@ -59,12 +59,14 @@
   .card-recommendations{
     margin-left: 0%;
     width: 100%;
+    text-align: center;
   } 
   .container-float{
     display: flex;
     flex-direction: column;
     width: 80%;
     align-items: center;
+    margin: auto;
   }
 }
 
