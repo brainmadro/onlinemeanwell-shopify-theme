@@ -26,6 +26,7 @@ body{
   margin-left: 20%;
 }
 
+
 .product-main-container {
   margin-left: 20%;
 }
@@ -349,11 +350,17 @@ div[role="progressbar"]::before {
   text-align: center;
   margin: 0 auto;
 }
-
+/*Desarrollo responsive*/
 @media only screen and (max-width: 749px) {
   .logo-align--center .site-header__logo {
     text-align: left;
     margin: 15px 0;
+  }
+  .header-wrapper {
+    margin-left: 0%;
+  }
+  .product-lateral-details{
+    
   }
 }
 @media only screen and (max-width: 749px) {
