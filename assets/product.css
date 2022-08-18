@@ -360,7 +360,20 @@ div[role="progressbar"]::before {
     margin-left: 0%;
   }
   .product-lateral-details{
-    
+    display: contents;
+  }
+  .product_details-container{
+    overflow-y: auto;
+  } 
+  .circle_progress_bar-container{
+    width: 80%;
+  }
+  .product_details-container{
+    background-color: whitesmoke;
+    height: 23%;
+  }
+  .product-main-container {
+     margin-left: 0%; 
   }
 }
 @media only screen and (max-width: 749px) {
