@@ -155,47 +155,7 @@ body{
   transform-origin: 50% 50%;
 }
 /*progress bar*/
-.bg{
-  width: 200px;
-  height: 200px;
-  border-radius: 100%;
-  background: #ccc;
-  position: relative;
-  margin: 20px auto;
-}
-.circle-right, .circle-left, .mask-right, .mask-left{
-  width: 200px;
-  height: 200px;
-  border-radius: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-.circle-right, .circle-left{
-  background: skyblue;
-}
-.mask-right, .mask-left{
-  background: #ccc;
-}
-.circle-right, .mask-right{
-  clip: rect(0,200px,200px,100px);
-}
-.circle-left, .mask-left{
-  clip: rect(0,100px,200px,0);
-}
-.text{
-  width: 160px;
-  height: 160px;
-  line-height: 160px;
-  text-align: center;
-  font-size: 34px;
-  color: deepskyblue;
-  border-radius: 100%;
-  background: #fff;
-  position: absolute;
-  top: 20px;
-  left: 20px;
-}
+
 @keyframes growProgressBar {
   0%, 33% { --pgPercentage: 0; }
   100% { --pgPercentage: var(--value); }
@@ -206,9 +166,9 @@ body{
   initial-value: 0;
 }
 div[role="progressbar"] {
-  --size: 12rem;
-  --fg: #369;
-  --bg: #def;
+  --size: 8rem;
+  --fg: #E73127;
+  --bg: #eef1f3;
   --pgPercentage: var(--value);
   animation: growProgressBar 3s 1 forwards;
   width: var(--size);
@@ -220,13 +180,17 @@ div[role="progressbar"] {
     radial-gradient(closest-side, white 80%, transparent 0 99.9%, white 0),
     conic-gradient(var(--fg) calc(var(--pgPercentage) * 1%), var(--bg) 0)
     ;
-  font-family: Helvetica, Arial, sans-serif;
   font-size: calc(var(--size) / 5);
   color: var(--fg);
 }
 div[role="progressbar"]::before {
   counter-reset: percentage var(--value);
-  content: counter(percentage) '%';
+  content: "";
+  color: #E73127;
+  font-size: 0.75em;
+  line-height: 16px;
+  position: absolute;
+  text-align: center;
 }
 
 .circle_progress_bar .text {
@@ -250,8 +214,6 @@ div[role="progressbar"]::before {
   line-height: 16px;
   position: absolute;
   text-align: center;
-  top: 20%;
-  width: 90%;
 }
 
 .drawer {
