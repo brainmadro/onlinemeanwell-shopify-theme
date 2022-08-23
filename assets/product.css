@@ -155,6 +155,47 @@ body{
   transform-origin: 50% 50%;
 }
 /*progress bar*/
+.bg{
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  background: #ccc;
+  position: relative;
+  margin: 20px auto;
+}
+.circle-right, .circle-left, .mask-right, .mask-left{
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.circle-right, .circle-left{
+  background: skyblue;
+}
+.mask-right, .mask-left{
+  background: #ccc;
+}
+.circle-right, .mask-right{
+  clip: rect(0,200px,200px,100px);
+}
+.circle-left, .mask-left{
+  clip: rect(0,100px,200px,0);
+}
+.text{
+  width: 160px;
+  height: 160px;
+  line-height: 160px;
+  text-align: center;
+  font-size: 34px;
+  color: deepskyblue;
+  border-radius: 100%;
+  background: #fff;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
 @keyframes growProgressBar {
   0%, 33% { --pgPercentage: 0; }
   100% { --pgPercentage: var(--value); }

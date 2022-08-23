@@ -325,32 +325,59 @@
         {%- endif -%}
       {%- endcase -%}
     {%- endfor -%}
-    <script>
-      const circle = document.querySelector(".progress-circle");
-const loading = document.querySelector(".loading");
+    <div class="bg">
+			<div class="circle-right"></div>
+			<div class="text">10%</div>
+		</div>
+		
+		<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(function(){				
+				// Obtener el valor porcentual
+				var num = parseInt($('.text').html());
+				
+				// Muestra el porcentaje de progreso de la transición a través de un temporizador
+				var temp = 0;
+				var timer = setInterval(function(){
+					calculate(temp);
+					// Limpia el temporizador para finalizar la llamada al método
+					if(temp == num){
+						clearInterval(timer);
+					}
+					temp++;
+				},30)
 
-const fakeUploadPercentage = [0, 10, 25, 40, 42, 60, 70, 75, 90, 100];
-let i = 0;
-
-const circumference = circle.getTotalLength();
-
-const interval = setInterval(() => {
-  circle.style.strokeDashoffset =
-    circumference - (fakeUploadPercentage[i] / 100) * circumference;
-  loading.innerHTML = fakeUploadPercentage[i] + "%";
-  i++;
-  console.log(i);
-  if (i == fakeUploadPercentage.length) {
-    clearInterval(interval);
-    loading.innerHTML = "Ok :)";
-  }
-}, 1000);
-    </script>
-    <svg class="progress" width="100" height="100">
-      <circle class="progress-circle" cx="50" cy="50" stroke="blue" r="30" fill="transparent" stroke-width="5" />
-      <text class="loading" fill="blue" x="50" y="50" alignment-baseline="middle" text-anchor="middle"></text>
-  </svg>
-  <span class=" loading"></span>
+				// Cambiar el porcentaje de visualización de la página
+				function calculate(value){
+					// Cambiar el valor mostrado en la página
+					$('.text').html(value + '%');
+					
+					// Limpia el efecto residual de la última llamada a este método
+					$('.circle-left').remove();
+					$('.mask-right').remove();
+					
+					// Cuando el porcentaje es menor o igual a 50
+					if(value <= 50){
+						var html = '';
+						
+						html += '<div class="mask-right" style="transform:rotate('+ (value * 3.6) +'deg)"></div>';
+						
+						// Agrega elementos secundarios al elemento
+						$('.circle-right').append(html);
+					}else{
+						value -= 50;
+						var html = '';
+						
+						html += '<div class="circle-left">';
+						html += '<div class="mask-left" style="transform:rotate('+ (value * 3.6) +'deg)"></div>';
+						html += '</div>';
+						
+						// Agregar elemento tras elemento
+						$('.circle-right').after(html);
+					}
+				}
+			})
+		</script>
     <div id="circle-container"></div>
     <div class="circle_progress_bar-container">
     <div class="wattage-circle_progress_bar circle_progress_bar">
