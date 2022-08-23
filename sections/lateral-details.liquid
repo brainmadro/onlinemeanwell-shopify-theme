@@ -324,82 +324,22 @@
           </p>
         {%- endif -%}
       {%- endcase -%}
-    {%- endfor -%}
-    <div class="bg">
-			<div class="circle-right"></div>
-			<div class="text">10%</div>
-		</div>
-		
-		<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
-		<script type="text/javascript">
-			$(function(){				
-				// Obtener el valor porcentual
-				var num = parseInt($('.text').html());
-				
-				// Muestra el porcentaje de progreso de la transición a través de un temporizador
-				var temp = 0;
-				var timer = setInterval(function(){
-					calculate(temp);
-					// Limpia el temporizador para finalizar la llamada al método
-					if(temp == num){
-						clearInterval(timer);
-					}
-					temp++;
-				},30)
-
-				// Cambiar el porcentaje de visualización de la página
-				function calculate(value){
-					// Cambiar el valor mostrado en la página
-					$('.text').html(value + '%');
-					
-					// Limpia el efecto residual de la última llamada a este método
-					$('.circle-left').remove();
-					$('.mask-right').remove();
-					
-					// Cuando el porcentaje es menor o igual a 50
-					if(value <= 50){
-						var html = '';
-						
-						html += '<div class="mask-right" style="transform:rotate('+ (value * 3.6) +'deg)"></div>';
-						
-						// Agrega elementos secundarios al elemento
-						$('.circle-right').append(html);
-					}else{
-						value -= 50;
-						var html = '';
-						
-						html += '<div class="circle-left">';
-						html += '<div class="mask-left" style="transform:rotate('+ (value * 3.6) +'deg)"></div>';
-						html += '</div>';
-						
-						// Agregar elemento tras elemento
-						$('.circle-right').after(html);
-					}
-				}
-			})
-		</script>
-    <div id="circle-container"></div>
+      {%- endfor -%}
     <div class="circle_progress_bar-container">
-    <div class="wattage-circle_progress_bar circle_progress_bar">
-        <span class="wattage_progress_bar-text"><i class="fa-solid fa-w"></i><br>Wattage<br>{{ current_variant.metafields.digikey.power_watts }}</span>
-        <svg>
-                    <circle class="bg" cx="40" cy="40" r="37"></circle>
-                    <circle id="wattage-pbar" class="progress one" cx="40" cy="40" r="37"></circle>
-                </svg>
+      <div class="wattage-circle_progress_bar circle_progress_bar">
+        <div role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="--value:95">
+          <span class="wattage_progress_bar-text"><i class="fa-solid fa-w"></i><br>Wattage<br>{{ current_variant.metafields.digikey.power_watts }}</span>
+        </div>
     </div>
     <div class="current-circle_progress_bar circle_progress_bar">
+      <div role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="--value:100">
         <span class="current_progress_bar-text"><br>Current<br>0~{{ current_variant.metafields.digikey.current_output_max }}</span>
-        <svg>
-                    <circle class="bg" cx="40" cy="40" r="37"></circle>
-                    <circle id="current-pbar" class="progress two" cx="40" cy="40" r="37"></circle>
-                </svg>
+      </div>
     </div>
     <div class="voltage-circle_progress_bar circle_progress_bar">
+      <div role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="--value:30">
         <span class="voltage_progress_bar-text"><i class="fas fa-bolt"></i><br>Voltage<br>{{ current_variant.metafields.digikey.voltage_output_1 }}</span>
-        <svg>
-                    <circle class="bg" cx="40" cy="40" r="37"></circle>
-                    <circle id="voltage-pbar" class="progress three" cx="40" cy="40" r="37"></circle>
-                </svg>
+      </div>
     </div>
     </div>
 </div>
