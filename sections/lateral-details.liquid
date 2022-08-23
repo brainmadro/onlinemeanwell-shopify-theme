@@ -325,6 +325,33 @@
         {%- endif -%}
       {%- endcase -%}
     {%- endfor -%}
+    <script>
+      const circle = document.querySelector(".progress-circle");
+const loading = document.querySelector(".loading");
+
+const fakeUploadPercentage = [0, 10, 25, 40, 42, 60, 70, 75, 90, 100];
+let i = 0;
+
+const circumference = circle.getTotalLength();
+
+const interval = setInterval(() => {
+  circle.style.strokeDashoffset =
+    circumference - (fakeUploadPercentage[i] / 100) * circumference;
+  loading.innerHTML = fakeUploadPercentage[i] + "%";
+  i++;
+  console.log(i);
+  if (i == fakeUploadPercentage.length) {
+    clearInterval(interval);
+    loading.innerHTML = "Ok :)";
+  }
+}, 1000);
+    </script>
+    <svg class="progress" width="100" height="100">
+      <circle class="progress-circle" cx="50" cy="50" stroke="blue" r="30" fill="transparent" stroke-width="5" />
+      <text class="loading" fill="blue" x="50" y="50" alignment-baseline="middle" text-anchor="middle"></text>
+  </svg>
+  <span class=" loading"></span>
+    <div id="circle-container"></div>
     <div class="circle_progress_bar-container">
     <div class="wattage-circle_progress_bar circle_progress_bar">
         <span class="wattage_progress_bar-text"><i class="fa-solid fa-w"></i><br>Wattage<br>{{ current_variant.metafields.digikey.power_watts }}</span>
