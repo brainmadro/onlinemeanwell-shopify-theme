@@ -84,6 +84,9 @@ body{
 .ficha-span{
   float: left;
 }
+.enlace-ficha-tecnica{
+  text-decoration: none;
+}
 #shopify-section-footer {
   display: none;
 }
