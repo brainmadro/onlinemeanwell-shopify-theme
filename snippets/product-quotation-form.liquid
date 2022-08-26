@@ -1,28 +1,36 @@
-<!-- <button class="js-download-link button" onclick="downloadFile('https://www.meanwellusa.com/upload/pdf/LRS-150/LRS-150-spec.pdf','fichaTecnica.txt'); return false;">Download TXT File</button>
 
-<button class="js-download-link button" onclick="downloadFile('https://co.mouser.com/datasheet/2/260/mwec_s_a0011714497_1-2274579.pdf','fichaTecnica.pdf');">Download PDF File</button>         -->
 
-<script type="text/javascript">
-  function downloadFile(data, fileName, type) {
-    // Crea un elemento de enlace a
-    const a = document.createElement("a");
-    a.style.display = "none";
-    document.body.appendChild(a);
+<script>
+  /* Funcion para descarga de archivo */
+  function download_file(fileURL, fileName) {
+      // for non-IE
+      if (!window.ActiveXObject) {
+          var save = document.createElement('a');
+          save.href = fileURL;
+          save.target = '_blank';
+          var filename = fileURL.substring(fileURL.lastIndexOf('/') + 1);
+          save.download = fileName || filename;
+          if (navigator.userAgent.toLowerCase().match(/(ipad|iphone|safari)/) && navigator.userAgent.search("Chrome") < 0) {
+              document.location = save.href;
+              // window event not working here
+          } else {
+              var evt = new MouseEvent('click', {
+                  'view': window,
+                  'bubbles': true,
+                  'cancelable': false
+              });
+              save.dispatchEvent(evt);
+              (window.URL || window.webkitURL).revokeObjectURL(save.href);
+          }
+      }
 
-    // seteo el href por la data o por href que le paso para descargar
-    a.href = window.URL.createObjectURL(
-      new Blob([data], { type })
-    );
-
-    //uso el atributo descargar 
-    a.setAttribute("download", fileName);
-
-    // hago la descarga
-    a.click();
-
-    // limpio
-    window.URL.revokeObjectURL(a.href);
-    document.body.removeChild(a);
+      // for IE < 11
+      else if (!!window.ActiveXObject && document.execCommand) {
+          var _window = window.open(fileURL, '_blank');
+          _window.document.close();
+          _window.document.execCommand('SaveAs', true, fileName || fileURL)
+          _window.close();
+      }
   }
 </script>
 
@@ -42,8 +50,18 @@
       {%- liquid 
         assign current_variant = product.selected_or_first_available_variant
       -%}
-      <span class="ficha-span"><button class="button-tecnic" onclick="downloadFile('https://blogandweb.com/wp-content/uploads/2013/10/archivo.pdf','fichaTecnica.pdf');"><i class="fa-solid fa-file-arrow-down font-size"></i></button> Ficha Técnica</span>
-      <!-- <span class="ficha-span"><a download="LRS-150.pdf" href="https://www.meanwellusa.com/upload/pdf/LRS-150/LRS-150-spec.pdf"><button class="button-tecnic"><i class="fa-solid fa-file-arrow-down font-size"></i></button></a>Descargar Ficha Técnica</span> -->
-      <span class="ficha-span"><a href="https://www.meanwellusa.com/upload/pdf/LRS-150/LRS-150-spec.pdf"><button class="button-tecnic"><i class="fa-solid fa-file-pdf font-size" ></i></button></a>Ver Ficha Técnica</span>
+      <span class="ficha-span">
+        <button class="button-tecnic" onclick="download_file('https://www.fervicom.com/index.php?controller=attachment&id_attachment=12')">
+          <i class="fa-solid fa-file-arrow-down font-size"></i>
+        </button> Ficha Técnica
+      </span>
+      <span class="ficha-span">
+        <a class="enlace-ficha-tecnica" href="https://www.meanwellusa.com/upload/pdf/LRS-150/LRS-150-spec.pdf">
+          <button class="button-tecnic">
+            <i class="fa-solid fa-file-pdf font-size" ></i>
+          </button>
+        </a>
+        Ver Ficha Técnica
+      </span>
     </div>
 </div>
