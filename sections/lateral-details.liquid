@@ -327,7 +327,7 @@
       {%- endfor -%}
     <div class="circle_progress_bar-container">
       <div class="wattage-circle_progress_bar circle_progress_bar">
-        <div role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="90" style="--value:100">
+        <div role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="90" style="--value:{{ current_variant.metafields.digikey.power_watts }}">
           <span class="wattage_progress_bar-text"><i class="fa-solid fa-w"></i><br>Wattage<br>{{ current_variant.metafields.digikey.power_watts }}</span>
         </div>
     </div>
