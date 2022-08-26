@@ -173,7 +173,7 @@ div[role="progressbar"] {
   --fg: #E73127;
   --bg: #eef1f3;
   --pgPercentage: var(--value);
-  animation: growProgressBar 3s 1 forwards;
+  animation: growProgressBar 5s 1 forwards;
   width: var(--size);
   height: var(--size);
   border-radius: 50%;
@@ -181,7 +181,7 @@ div[role="progressbar"] {
   place-items: center;
   background:
     radial-gradient(closest-side, white 80%, transparent 0 99.9%, white 0),
-    conic-gradient(var(--fg) calc(var(--pgPercentage) * 1%), var(--bg) 0)
+    conic-gradient(var(--fg) calc(var(--pgPercentage) * 2.1%), var(--bg) 0)
     ;
   font-size: calc(var(--size) / 5);
   color: var(--fg);
