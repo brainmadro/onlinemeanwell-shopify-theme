@@ -243,6 +243,7 @@ div[role="progressbar"]::before {
   width: 38px;
   height: 24px;
   fill: inherit;
+  color: white;
 }
 
 .mobile-nav-wrapper {
@@ -261,6 +262,37 @@ div[role="progressbar"]::before {
   min-height: 67px;
   padding: 10px 15px;
   text-align: center;
+}
+.personalization-header{
+  background: rgba(59, 57, 57, 0.759);
+  opacity: 1;
+  box-sizing: border-box;
+  height: 100vh;
+  padding-bottom: 1em;
+  position: fixed;
+  top: 0;
+  width: 30%;
+  z-index: 10;
+}
+.container-grid {
+  color: white;
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: 150px 150px;
+  grid-template-rows: 120px 120px;
+  margin-left: 20%;
+  text-align: center;
+}
+.image-black{
+  filter: brightness(1.1);
+  mix-blend-mode: multiply;
+  width: 50%;
+}
+.text-grid{
+  font-weight: bolder;
+}
+.grid-border{
+  border: 1px solid white;
 }
 /*contenedor para los detalles del producto*/
 .product_details-container {
