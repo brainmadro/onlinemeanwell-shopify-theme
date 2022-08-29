@@ -93,3 +93,10 @@ body{
 .header-wrapper .header__menu-item {
   color: #fff;
 }
+
+.container-header{
+  height: 100%;
+}
+.logo-header{
+  width: 20%;
+}
