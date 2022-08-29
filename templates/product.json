@@ -1,7 +1,7 @@
 {
   "sections": {
-    "lateral-details": {
-      "type": "lateral-details",
+    "personalization-header": {
+      "type": "personalization-header",
       "blocks": {
         "title": {
           "type": "title",
@@ -76,7 +76,7 @@
     }
   },
   "order": [
-    "lateral-details",
+    "personalization-header",
     "main",
     "product-recommendations"
   ]
