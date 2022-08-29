@@ -1,0 +1,159 @@
+<script src="{{ 'personalization-header.js' | asset_url }}" defer="defer"></script>
+<link rel="stylesheet" href="{{ 'component-search.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript>{{ 'component-search.css' | asset_url | stylesheet_tag }}</noscript>
+
+<script type="application/json" id="variants">
+  {
+    "product": {
+      "id": {{ product.id }},
+      "variants": [
+        {%- for variant in product.variants -%}
+          {
+            "id": {{ variant.id }},
+            "current": {{ product.selected_or_first_available_variant.id }},
+            "price": {{ variant.price }},
+            "metafields": {
+              {%- for metafield in variant.metafields.digikey -%}
+                {{ metafield[0] | json | append: ": " | append: metafield[1] }}
+                {% unless forloop.last %},{% endunless %}
+              {%- endfor -%}
+            }
+          }
+          {%- unless product.variants.last == variant -%}
+              {{ "," }}
+          {%- endunless -%}
+        {%- endfor -%}
+      ]
+    }
+  }
+</script>
+
+
+
+<div class="container-header">
+    <img src="https://static4.arrow.com/-/media/arrow/images/manufacturers/m/mw-logo-png.png" alt="logo-mean-well" class="logo-header">
+    {%- if section.settings.logo_position == 'top-center' or section.settings.menu == blank -%}
+      <details-modal class="header__search">
+        <details>
+          <summary class="header__icon header__icon--search header__icon--summary link focus-inset modal__toggle" aria-haspopup="dialog" aria-label="{{ 'general.search.search' | t }}">
+            <span>
+              <svg class="modal__toggle-open icon icon-search" aria-hidden="true" focusable="false" role="presentation">
+                <use href="#icon-search">
+              </svg>
+              <svg class="modal__toggle-close icon icon-close" aria-hidden="true" focusable="false" role="presentation">
+                <use href="#icon-close">
+              </svg>
+            </span>
+          </summary>
+          <div class="search-modal modal__content gradient" role="dialog" aria-modal="true" aria-label="{{ 'general.search.search' | t }}">
+            <div class="modal-overlay"></div>
+            <div class="search-modal__content{% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_vertical_offset < 0 %} search-modal__content-top{% else %} search-modal__content-bottom{% endif %}" tabindex="-1">
+              {%- if settings.predictive_search_enabled -%}
+                <predictive-search class="search-modal__form" data-loading-text="{{ 'accessibility.loading' | t }}">
+              {%- endif -%}
+                <form action="{{ routes.search_url }}" method="get" role="search" class="search search-modal__form">
+                  <div class="field">
+                    <input class="search__input field__input"
+                      id="Search-In-Modal-1"
+                      type="search"
+                      name="q"
+                      value=""
+                      placeholder="{{ 'general.search.search' | t }}"
+                      {%- if settings.predictive_search_enabled -%}
+                        role="combobox"
+                        aria-expanded="false"
+                        aria-owns="predictive-search-results-list"
+                        aria-controls="predictive-search-results-list"
+                        aria-haspopup="listbox"
+                        aria-autocomplete="list"
+                        autocorrect="off"
+                        autocomplete="off"
+                        autocapitalize="off"
+                        spellcheck="false"
+                      {%- endif -%}
+                    >
+                    <label class="field__label" for="Search-In-Modal-1">{{ 'general.search.search' | t }}</label>
+                    <input type="hidden" name="options[prefix]" value="last">
+                    <button class="search__button field__button" aria-label="{{ 'general.search.search' | t }}">
+                      <svg class="icon icon-search" aria-hidden="true" focusable="false" role="presentation">
+                        <use href="#icon-search">
+                      </svg>
+                    </button>
+                  </div>
+
+                  {%- if settings.predictive_search_enabled -%}
+                    <div class="predictive-search predictive-search--header" tabindex="-1" data-predictive-search>
+                      <div class="predictive-search__loading-state">
+                        <svg aria-hidden="true" focusable="false" role="presentation" class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+                          <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+                        </svg>
+                      </div>
+                    </div>
+
+                    <span class="predictive-search-status visually-hidden" role="status" aria-hidden="true"></span>
+                  {%- endif -%}
+                </form>
+              {%- if settings.predictive_search_enabled -%}
+                </predictive-search>
+              {%- endif -%}
+              <button type="button" class="modal__close-button link link--text focus-inset" aria-label="{{ 'accessibility.close' | t }}">
+                <svg class="icon icon-close" aria-hidden="true" focusable="false" role="presentation">
+                  <use href="#icon-close">
+                </svg>
+              </button>
+            </div>
+          </div>
+        </details>
+      </details-modal>
+    {%- endif -%}
+    <div class="container-grid">
+        {%- liquid 
+            assign current_variant = product.selected_or_first_available_variant
+          -%}
+        <div class="grid-border">
+            <img src="{{ current_variant.featured_image | product_img_url: 'large' }}" class="image-black">
+            <h3 class="text-grid">ENCLOSED</h3>
+        </div>
+        <div class="grid-border">
+            <img src="{{ current_variant.featured_image | product_img_url: 'large' }}" class="image-black">
+            <h3 class="text-grid">ENCLOSED</h3>
+        </div>
+        <div class="grid-border">
+            <img src="{{ current_variant.featured_image | product_img_url: 'large' }}" class="image-black">
+            <h3 class="text-grid">ENCLOSED</h3>
+        </div>
+        <div class="grid-border">
+            <img src="{{ current_variant.featured_image | product_img_url: 'large' }}" class="image-black">
+            <h3 class="text-grid">ENCLOSED</h3>
+        </div>
+        <div class="grid-border">
+            <img src="{{ current_variant.featured_image | product_img_url: 'large' }}" class="image-black">
+            <h3 class="text-grid">ENCLOSED</h3>
+        </div>
+    </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.lateral-details.name",
+  "tag": "aside",
+  "class": "personalization-header",
+  "blocks": [
+    {
+      "type": "title",
+      "name": "t:sections.lateral-details.blocks.title.name",
+      "limit": 1
+    },
+    {
+      "type": "description_title",
+      "name": "t:sections.lateral-details.blocks.description_title.name",
+      "limit": 1
+    },
+    {
+      "type": "text",
+      "name": "t:sections.lateral-details.blocks.loading_properties.name",
+      "limit": 1
+    }
+  ]
+}
+{% endschema %}
