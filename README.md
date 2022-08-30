@@ -1,10 +1,11 @@
-# The Theme of onlinemeanwell.com
+# The Theme of onlinemeanwell.com v2
 
 Lenguajes
 Sass
 HTML
 Liquid
 
-Básico para instalar
+# Básico para instalar
+
 
 gulp para editar 
