@@ -1,14 +1,29 @@
+<<<<<<< HEAD
+=======
+<head>
+  <script src="https://kit.fontawesome.com/a9cfc4b633.js" crossorigin="anonymous"></script>
+  <!-- our project just needs Font Awesome Solid + Brands -->
+  <link href="../fontawesome/css/fontawesome.css" rel="stylesheet">
+  <link href="../fontawesome/css/brands.css" rel="stylesheet">
+  <link href="../fontawesome/css/solid.css" rel="stylesheet">
+</head>
+>>>>>>> 1a5855f00dc0131480975a785c60443d61cff233
 <section id="MainProduct-{{ section.id }}" class="page-width section-{{ section.id }}-padding product-main-container" data-section="{{ section.id }}">
   {{ 'product.css' | asset_url | stylesheet_tag }}
 
   <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+<<<<<<< HEAD
 
+=======
+  <link href="../fontawesome/css/all.css" rel="stylesheet">
+>>>>>>> 1a5855f00dc0131480975a785c60443d61cff233
   {%- assign first_3d_model = product.media | where: "media_type", "model" | first -%}
   {%- if first_3d_model -%}
     {{ 'component-product-model.css' | asset_url | stylesheet_tag }}
     <link id="ModelViewerStyle" rel="stylesheet" href="https://cdn.shopify.com/shopifycloud/model-viewer-ui/assets/v1.0/model-viewer-ui.css" media="print" onload="this.media='all'">
     <link id="ModelViewerOverride" rel="stylesheet" href="{{ 'component-model-viewer-ui.css' | asset_url }}" media="print" onload="this.media='all'">
   {%- endif -%}
+<<<<<<< HEAD
 
   <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.gallery_layout }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
 <<<<<<< HEAD
@@ -16,6 +31,9 @@
 =======
     <div class="grid__item product__media-wrapper">
 >>>>>>> a409f2f20b96a5ca41a9b99b238707be81cd4165
+=======
+  <!---Esta parte empezando con media-gallery de aca para abjo es necesario para renderizar las variantes cada vez que se de click a alguna el link cambie-->
+>>>>>>> 1a5855f00dc0131480975a785c60443d61cff233
       <media-gallery id="MediaGallery-{{ section.id }}" role="region" {% if section.settings.enable_sticky_info %}class="product__media-gallery"{% endif %} aria-label="{{ 'products.product.media.gallery_viewer' | t }}" data-desktop-layout="{{ section.settings.gallery_layout }}">
         <div id="GalleryStatus-{{ section.id }}" class="visually-hidden" role="status"></div>
         <slider-component id="GalleryViewer-{{ section.id }}" class="slider-mobile-gutter">
@@ -26,7 +44,11 @@
             {%- liquid
               assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src'
               assign media_count = product.media.size
+<<<<<<< HEAD
               if section.settings.hide_variants
+=======
+              if section.settings.hide_variants and media_count > 1
+>>>>>>> 1a5855f00dc0131480975a785c60443d61cff233
                 assign media_count = media_count | minus: variant_images.size | plus: 1
               endif
 
@@ -40,20 +62,39 @@
             -%}
             {%- if product.selected_or_first_available_variant.featured_media != null -%}
               {%- assign featured_media = product.selected_or_first_available_variant.featured_media -%}
+<<<<<<< HEAD
               <li id="Slide-{{ section.id }}-{{ featured_media.id }}" class="product__media-item grid__item slider__slide is-active{% if featured_media.media_type != 'image' %} product__media-item--full{% endif %}{% if section.settings.hide_variants and variant_images contains featured_media.src %} product__media-item--variant{% endif %}" data-media-id="{{ section.id }}-{{ featured_media.id }}">
                 {%- assign media_position = 1 -%}
                 {% render 'product-thumbnail', media: featured_media, position: media_position, loop: section.settings.enable_video_looping, modal_id: section.id, xr_button: true, media_width: media_width, lazy_load: false %}
+=======
+              <li id="Slide-{{ section.id }}-{{ featured_media.id }}"
+              {% if section.settings.hide_variants and variant_images contains featured_media.src %} product__media-item--variant{% endif %}" data-media-id="{{ section.id }}-{{ featured_media.id }}">
+                {%- assign media_position = 1 -%}
+               
+>>>>>>> 1a5855f00dc0131480975a785c60443d61cff233
               </li>
             {%- endif -%}
             {%- for media in product.media -%}
               {%- unless media.id == product.selected_or_first_available_variant.featured_media.id -%}
                 <li id="Slide-{{ section.id }}-{{ media.id }}" class="product__media-item grid__item slider__slide{% if product.selected_or_first_available_variant.featured_media == null and forloop.index == 1 %} is-active{% endif %}{% if media.media_type != 'image' %} product__media-item--full{% endif %}{% if section.settings.hide_variants and variant_images contains media.src %} product__media-item--variant{% endif %}" data-media-id="{{ section.id }}-{{ media.id }}">
+<<<<<<< HEAD
                   {%- assign media_position = media_position | default: 0 | plus: 1 -%}
                   {% render 'product-thumbnail', media: media, position: media_position, loop: section.settings.enable_video_looping, modal_id: section.id, xr_button: true, media_width: media_width, lazy_load: true %}
+=======
+                  {%- liquid
+                    assign media_position = media_position | default: 0 | plus: 1
+                    assign lazy_load = false
+                    if media_position > 1
+                      assign lazy_load = true
+                    endif
+                    render 'product-thumbnail', media: media, position: media_position, loop: section.settings.enable_video_looping, modal_id: section.id, xr_button: true, media_width: media_width, lazy_load: lazy_load
+                  -%}
+>>>>>>> 1a5855f00dc0131480975a785c60443d61cff233
                 </li>
               {%- endunless -%}
             {%- endfor -%}
           </ul>
+<<<<<<< HEAD
           <div class="slider-buttons no-js-hidden quick-add-hidden{% if media_count < 2 or section.settings.mobile_thumbnails == 'show' %} small-hide{% endif %}">
             <button type="button" class="slider-button slider-button--prev" name="previous" aria-label="{{ 'general.slider.previous_slide' | t }}">{% render 'icon-caret' %}</button>
             <div class="slider-counter caption">
@@ -64,6 +105,8 @@
             </div>
             <button type="button" class="slider-button slider-button--next" name="next" aria-label="{{ 'general.slider.next_slide' | t }}">{% render 'icon-caret' %}</button>
           </div>
+=======
+>>>>>>> 1a5855f00dc0131480975a785c60443d61cff233
         </slider-component>
         {%- if first_3d_model -%}
           <button
@@ -152,7 +195,11 @@
                       aria-describedby="Thumbnail-{{ section.id }}-{{ forloop.index }}"
                     >
                       <img id="Thumbnail-{{ section.id }}-{{ forloop.index }}"
+<<<<<<< HEAD
                         srcset="{% if media.preview_image.width >= 59 %}{{ media.preview_image | image_url: width: 59 }} 59x,{% endif %}
+=======
+                        srcset="{% if media.preview_image.width >= 59 %}{{ media.preview_image | image_url: width: 59 }} 59w,{% endif %}
+>>>>>>> 1a5855f00dc0131480975a785c60443d61cff233
                                 {% if media.preview_image.width >= 118 %}{{ media.preview_image | image_url: width: 118 }} 118w,{% endif %}
                                 {% if media.preview_image.width >= 84 %}{{ media.preview_image | image_url: width: 84 }} 84w,{% endif %}
                                 {% if media.preview_image.width >= 168 %}{{ media.preview_image | image_url: width: 168 }} 168w,{% endif %}
@@ -175,10 +222,16 @@
         {%- endif -%}
       </media-gallery>
 <<<<<<< HEAD
+<<<<<<< HEAD
     </div> {% endcomment %}
 =======
     </div>
 >>>>>>> a409f2f20b96a5ca41a9b99b238707be81cd4165
+=======
+    </div>
+
+  <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.gallery_layout }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
+>>>>>>> 1a5855f00dc0131480975a785c60443d61cff233
     <div class="product__info-wrapper grid__item{% if settings.page_width > 1400 and section.settings.media_size == "small" %} product__info-wrapper--extra-padding{% endif %}">
       <div id="ProductInfo-{{ section.id }}" class="product__info-container{% if section.settings.enable_sticky_info %} product__info-container--sticky{% endif %}">
         {%- assign product_form_id = 'product-form-' | append: section.id -%}
@@ -186,16 +239,24 @@
         {%- for block in section.blocks -%}
           {%- case block.type -%}
 <<<<<<< HEAD
+<<<<<<< HEAD
           {%- when 'product_pricing_table' -%}
             {% render 'product-pricing-table' %}
 =======
           {%- when '@app' -%}
             {% render block %}
 >>>>>>> a409f2f20b96a5ca41a9b99b238707be81cd4165
+=======
+          {%- when 'product_pricing_table' -%}
+            {% render 'product-pricing-table' %}
+          {%- when 'quotation_form' -%}
+            {% render 'product-quotation-form' %}
+>>>>>>> 1a5855f00dc0131480975a785c60443d61cff233
           {%- when 'text' -%}
             <p class="product__text{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}" {{ block.shopify_attributes }}>
               {{- block.settings.text -}}
             </p>
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
           {%- when 'title' -%}
@@ -208,6 +269,8 @@
               </a>
             </div>
 >>>>>>> a409f2f20b96a5ca41a9b99b238707be81cd4165
+=======
+>>>>>>> 1a5855f00dc0131480975a785c60443d61cff233
           {%- when 'price' -%}
             <div class="no-js-hidden" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
               {%- render 'price', product: product, use_variant: true, show_badges: true, price_class: 'price--large' -%}
@@ -326,6 +389,7 @@
             {%- unless product.has_only_default_variant -%}
               {%- if block.settings.picker_type == 'button' -%}
 <<<<<<< HEAD
+<<<<<<< HEAD
                 <div class="card">
                   <h2 class="h4 accordion__title">Modelos de la serie</h2>
                   <variant-radios class="no-js-hidden voltage-selector" data-section="{{ section.id }}" data-url="{{ product.url }}" {{ block.shopify_attributes }}>
@@ -334,19 +398,39 @@
                           
                           <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}" class="container">
                             <input type="radio" id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
+=======
+                <div class="card">
+                  <h2 class="accordion__title">Voltage Options</h2> 
+                  <variant-radios class="no-js-hidden voltage-selector" data-section="{{ section.id }}" data-url="{{ product.url }}" {{ block.shopify_attributes }}>
+                    {%- for option in product.options_with_values -%}
+                        <fieldset class="fielset-none">
+                          {%- for value in option.values -%}
+                          <label onclick="setInterval('location.reload()',1000);" for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}" class="container">
+                            <input type="radio" " id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
+>>>>>>> 1a5855f00dc0131480975a785c60443d61cff233
                               name="{{ option.name }}"
                               value="{{ value | escape }}"
                               form="{{ product_form_id }}"
                               {% if option.selected_value == value %}checked{% endif %}
                             >
+<<<<<<< HEAD
                             <span class="checkmark">{{ value }}</span>
                           </label>
                       {%- endfor -%}
                     {%- endfor -%}
+=======
+                            <span class="checkmark">{{ value }} V</span>
+                          </label>
+                          {%- endfor -%}
+                        </fieldset>
+                    {%- endfor -%}
+                    <!--Aca es la logica para los variantes --->
+>>>>>>> 1a5855f00dc0131480975a785c60443d61cff233
                     <script type="application/json">
                       {{ product.variants | json }}
                     </script>
                   </variant-radios>
+<<<<<<< HEAD
                 </div>                
 =======
                 <variant-radios class="no-js-hidden" data-section="{{ section.id }}" data-url="{{ product.url }}" {{ block.shopify_attributes }}>
@@ -371,6 +455,25 @@
                   </script>
                 </variant-radios>
 >>>>>>> a409f2f20b96a5ca41a9b99b238707be81cd4165
+=======
+                  <div class="voltage-selector-series">
+                    {%- liquid 
+                      assign current_variant = product.selected_or_first_available_variant
+                    -%}
+                    <!--Recorro todas las variantes disponibles-->
+                    {% for variant in product.variants %}
+                      {%if variant.title != current_variant.metafields.digikey.title%}
+                        <div class="voltage-selector-series-flex">
+                          <h4 class="voltage-selector-series-h4">LRS-150-{{variant.title}}</h4>
+                          <span>{{variant.title}} V <i class="fa-solid fa-bolt"></i></span>
+                        </div>
+                        <span class="voltage-selector-series-span">Potencia {{variant.metafields.digikey.power_watts}}</span>
+                        <span class="voltage-selector-series-span">  Corriente Salida: {{variant.metafields.digikey.current_output_max}}</span>
+                      {% endif %}
+                    {%- endfor -%}
+                  </div>
+                </div>                
+>>>>>>> 1a5855f00dc0131480975a785c60443d61cff233
               {%- else -%}
                 <variant-selects class="no-js-hidden" data-section="{{ section.id }}" data-url="{{ product.url }}" {{ block.shopify_attributes }}>
                   {%- for option in product.options_with_values -%}
@@ -423,6 +526,10 @@
                 </div>
               </div>
             </noscript>
+<<<<<<< HEAD
+=======
+            <!--Aca empezamos con la partes de la que se compone la pagina-->
+>>>>>>> 1a5855f00dc0131480975a785c60443d61cff233
           {%- when 'buy_buttons' -%}
             <div {{ block.shopify_attributes }}>
               <product-form class="product-form">
@@ -512,19 +619,26 @@
             {%- endif -%}
           {%- endcase -%}
         {%- endfor -%}
+<<<<<<< HEAD
         <a href="{{ product.url }}" class="link product__view-details animate-arrow">
           {{ 'products.product.view_full_details' | t }}
           {% render 'icon-arrow' %}
+=======
+>>>>>>> 1a5855f00dc0131480975a785c60443d61cff233
         </a>
       </div>
     </div>
   </div>
+<<<<<<< HEAD
 
 <<<<<<< HEAD
   {% comment %} <product-modal id="ProductModal-{{ section.id }}" class="product-media-modal media-modal">
 =======
   <product-modal id="ProductModal-{{ section.id }}" class="product-media-modal media-modal">
 >>>>>>> a409f2f20b96a5ca41a9b99b238707be81cd4165
+=======
+  {% comment %} <product-modal id="ProductModal-{{ section.id }}" class="product-media-modal media-modal">
+>>>>>>> 1a5855f00dc0131480975a785c60443d61cff233
     <div class="product-media-modal__dialog" role="dialog" aria-label="{{ 'products.modal.label' | t }}" aria-modal="true" tabindex="-1">
       <button id="ModalClose-{{ section.id }}" type="button" class="product-media-modal__toggle" aria-label="{{ 'accessibility.close' | t }}">{% render 'icon-close' %}</button>
 
@@ -552,10 +666,14 @@
       </div>
     </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
   </product-modal> {% endcomment %}
 =======
   </product-modal>
 >>>>>>> a409f2f20b96a5ca41a9b99b238707be81cd4165
+=======
+  </product-modal> {% endcomment %}
+>>>>>>> 1a5855f00dc0131480975a785c60443d61cff233
 
   {% assign popups = section.blocks | where: "type", "popup" %}
   {%- for block in popups -%}
@@ -658,12 +776,23 @@
   "blocks": [
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "type": "product_pricing_table",
       "name": "Pricing Table",
       "limit": 1
 =======
       "type": "@app"
 >>>>>>> a409f2f20b96a5ca41a9b99b238707be81cd4165
+=======
+      "type": "product_pricing_table",
+      "name": "Pricing Table",
+      "limit": 1
+    },
+    {
+      "type": "quotation_form",
+      "name": "Quotation Form",
+      "limit": 1
+>>>>>>> 1a5855f00dc0131480975a785c60443d61cff233
     },
     {
       "type": "text",

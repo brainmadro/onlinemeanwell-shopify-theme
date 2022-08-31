@@ -15,7 +15,76 @@
   flex-direction: column;
   height: 100%;
 }
+<<<<<<< HEAD
 
+=======
+.card-form{
+  text-align: var(--card-text-alignment);
+  text-decoration: none;
+  background-color: #E73127;
+  border-radius: 8px;
+  padding: 1.5em;
+  color: #fff;
+}
+.card-form:not(.ratio){
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.5%;
+}
+.card-form h1{
+  color: #fff;
+  margin: 0%;
+}
+/*contenedor de tabla precios*/
+.card-pricing{
+  text-align: var(--card-text-alignment);
+  text-decoration: none;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 1.5em;
+}
+.card-pricing:not(.ratio){
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin-top: 1.5%;
+  width: 25%;
+}
+/*formulario cotizacion*/
+.input-form{
+  border-radius: 5px;
+  margin-bottom: 5px;
+  height: 30px;
+}
+.input-textarea{
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+.boton-form{
+  border-radius: 5px;
+  margin-bottom: 5px;
+  background-color: #fff;
+  color: #E73127;
+  font-weight: bold;
+  height: 2.5em;
+  cursor: pointer;
+}
+.boton-form:hover{
+  background-color: #E73127;
+  color: #fff;
+}
+/*contenedor ficha tecnica*/
+.card-ficha-tecnica{
+  text-align: var(--card-text-alignment);
+  text-decoration: none;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 1.5em;
+}
+.card-ficha-tecnica:not(.ratio){
+  display: grid;
+}
+>>>>>>> 1a5855f00dc0131480975a785c60443d61cff233
 .card--card {
   height: 100%;
 }
@@ -311,3 +380,18 @@
 .card-article-info {
   margin-top: 1rem;
 }
+<<<<<<< HEAD
+=======
+/*diseño responsive*/
+@media only screen and (max-width:749px) {
+  .card-form:not(.ratio) {
+    width: 88vw;
+  }
+  .card:not(.ratio) {
+    width: 100%;
+  }
+  .card-ficha-tecnica:not(.ratio) {
+    width: 88vw;
+  }
+}
+>>>>>>> 1a5855f00dc0131480975a785c60443d61cff233

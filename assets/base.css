@@ -209,6 +209,17 @@ html.no-js .no-js-inline {
 html.no-js .no-js-hidden {
   display: none !important;
 }
+<<<<<<< HEAD
+=======
+/*Agregando Fuente sofia*/
+/* @font-face {
+  font-family: Sofia Pro;
+  src: url(../Sofia/Sofia\ Pro\ Regular\ Az.otf);
+}
+body{
+  font-family: Sofia Pro;
+} */
+>>>>>>> 1a5855f00dc0131480975a785c60443d61cff233
 
 .page-width {
   max-width: var(--page-width);
@@ -378,7 +389,10 @@ h5,
 .h3,
 .h4,
 .h5 {
+<<<<<<< HEAD
   font-family: var(--font-heading-family);
+=======
+>>>>>>> 1a5855f00dc0131480975a785c60443d61cff233
   font-style: var(--font-heading-style);
   font-weight: var(--font-heading-weight);
   letter-spacing: calc(var(--font-heading-scale) * 0.06rem);
@@ -399,25 +413,48 @@ h5,
 
 h1,
 .h1 {
+<<<<<<< HEAD
   font-size: calc(var(--font-heading-scale) * 3rem);
+=======
+  font-size: calc(var(--font-heading-scale) * 2rem);
+  margin: 0% 0% 4% 0%;
+>>>>>>> 1a5855f00dc0131480975a785c60443d61cff233
 }
 
 @media only screen and (min-width: 750px) {
   h1,
   .h1 {
+<<<<<<< HEAD
     font-size: calc(var(--font-heading-scale) * 4rem);
+=======
+    font-size: calc(var(--font-heading-scale) * 2.5rem);
+    color: red;
+    font-weight: 700;
+    margin: 0% 0% 4% 0%;
+>>>>>>> 1a5855f00dc0131480975a785c60443d61cff233
   }
 }
 
 h2,
 .h2 {
+<<<<<<< HEAD
   font-size: calc(var(--font-heading-scale) * 2rem);
+=======
+  font-size: calc(var(--font-heading-scale) * 1rem);
+  margin: 0%;
+>>>>>>> 1a5855f00dc0131480975a785c60443d61cff233
 }
 
 @media only screen and (min-width: 750px) {
   h2,
   .h2 {
+<<<<<<< HEAD
     font-size: calc(var(--font-heading-scale) * 2.4rem);
+=======
+    font-size: calc(var(--font-heading-scale) * 1.5rem);
+    font-weight: bolder;
+    margin: 0%;
+>>>>>>> 1a5855f00dc0131480975a785c60443d61cff233
   }
 }
 
@@ -435,7 +472,10 @@ h3,
 
 h4,
 .h4 {
+<<<<<<< HEAD
   font-family: var(--font-heading-family);
+=======
+>>>>>>> 1a5855f00dc0131480975a785c60443d61cff233
   font-style: var(--font-heading-style);
   font-size: calc(var(--font-heading-scale) * 1.5rem);
 }
@@ -443,15 +483,32 @@ h4,
 h5,
 .h5 {
   font-size: calc(var(--font-heading-scale) * 1.2rem);
+<<<<<<< HEAD
+=======
+  padding-top: 10%;
+>>>>>>> 1a5855f00dc0131480975a785c60443d61cff233
 }
 
 @media only screen and (min-width: 750px) {
   h5,
   .h5 {
     font-size: calc(var(--font-heading-scale) * 1.3rem);
+<<<<<<< HEAD
   }
 }
 
+=======
+    padding-top: 0%;
+  }
+}
+/*diseño mobile*/
+@media only screen and (max-width: 750px) {
+  h5,
+  .h5 {
+    padding-top: 0%;
+  }
+}
+>>>>>>> 1a5855f00dc0131480975a785c60443d61cff233
 h6,
 .h6 {
   color: rgba(var(--color-foreground), 0.75);
@@ -834,6 +891,10 @@ summary::-webkit-details-marker {
 .focus-none {
   box-shadow: none !important;
   outline: 0 !important;
+<<<<<<< HEAD
+=======
+  background-color: #fafafe;
+>>>>>>> 1a5855f00dc0131480975a785c60443d61cff233
 }
 
 .focus-offset:focus-visible {
@@ -970,7 +1031,11 @@ summary::-webkit-details-marker {
 .grid {
   display: flex;
   flex-wrap: wrap;
+<<<<<<< HEAD
   margin-bottom: 2rem;
+=======
+  margin-bottom: 0;
+>>>>>>> 1a5855f00dc0131480975a785c60443d61cff233
   padding: 0;
   list-style: none;
   column-gap: var(--grid-mobile-horizontal-spacing);
@@ -2486,6 +2551,12 @@ details[open] .modal-overlay::after {
   .search-modal__content {
     padding: 0 6rem;
   }
+<<<<<<< HEAD
+=======
+  h5{
+    padding-top: 0%;
+  }
+>>>>>>> 1a5855f00dc0131480975a785c60443d61cff233
 }
 
 @media screen and (min-width: 990px) {

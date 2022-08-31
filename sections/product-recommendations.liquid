@@ -1,7 +1,11 @@
 <link rel="stylesheet" href="{{ 'component-card.css' | asset_url }}" media="print" onload="this.media='all'">
+<<<<<<< HEAD
 <link rel="stylesheet" href="{{ 'component-price.css' | asset_url }}" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="{{ 'section-product-recommendations.css' | asset_url }}" media="print" onload="this.media='all'">
 
+=======
+<link rel="stylesheet" href="{{ 'section-product-recommendations.css' | asset_url }}" media="print" onload="this.media='all'">
+>>>>>>> 1a5855f00dc0131480975a785c60443d61cff233
 <noscript>{{ 'component-card.css' | asset_url | stylesheet_tag }}</noscript>
 <noscript>{{ 'component-price.css' | asset_url | stylesheet_tag }}</noscript>
 <noscript>{{ 'section-product-recommendations.css' | asset_url | stylesheet_tag }}</noscript>
@@ -19,11 +23,60 @@
     }
   }
 {%- endstyle -%}
+<<<<<<< HEAD
 
 <div class="color-{{ section.settings.color_scheme }} gradient">
   <product-recommendations class="product-recommendations page-width section-{{ section.id }}-padding isolate" data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit={{ section.settings.products_to_show }}">
     {% if recommendations.performed and recommendations.products_count > 0 %}
       <h2 class="product-recommendations__heading {{ section.settings.heading_size }}">{{ section.settings.heading | escape }}</h2>
+=======
+<div class="color-{{ section.settings.color_scheme }} gradient">
+  <product-recommendations class="product-recommendations page-width section-{{ section.id }}-padding isolate" data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit={{ section.settings.products_to_show }}">
+    <div class="product_header-container">
+      {%- liquid 
+        assign current_variant = product.selected_or_first_available_variant
+      -%}
+      <div class="card-recommendations">
+        <div class="conteiner-recommendations">
+          <h2 class="h4 accordion__title">Modelos que puedes necesitar</h2>
+          {% assign pictures = "1,2,3,4,5,6" | split:',' %}
+          {% for item in pictures%}
+            <div class="container-float">
+              <img class="recommendation-img" src="{{ current_variant.featured_image | product_img_url: 'large' }}">
+              <div class="text-recommendation">
+                <h5>LRS-100-12</h5>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+      <ul id="product-grid" data-id="{{ section.id }}" class="
+      grid product-grid grid--{{ section.settings.columns_mobile }}-col-tablet-down
+      grid--{{ section.settings.columns_desktop }}-col-desktop">
+      {%- for product in collection.products -%}
+        {% assign lazy_load = false %}
+        {%- if forloop.index > 2 -%}
+          {%- assign lazy_load = true -%}
+        {%- endif -%}
+        <li class="grid__item">
+          {% render 'card-product',
+            card_product: product,
+            media_aspect_ratio: section.settings.image_ratio,
+            show_secondary_image: section.settings.show_secondary_image,
+            show_vendor: section.settings.show_vendor,
+            show_rating: section.settings.show_rating,
+            lazy_load: lazy_load,
+            show_quick_add: section.settings.enable_quick_add,
+            section_id: section.id
+  
+          %}
+        </li>
+      {%- endfor -%}
+    </ul>
+    </div>
+    <div class="product_header-container">
+      <h2 class="product-recommendations__heading {{ section.settings.heading_size }}"></h2>
+>>>>>>> 1a5855f00dc0131480975a785c60443d61cff233
       <ul class="grid product-grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down" role="list">
         {% for recommendation in recommendations.products %}
           <li class="grid__item">
@@ -37,7 +90,11 @@
           </li>
         {% endfor %}
       </ul>
+<<<<<<< HEAD
     {% endif %}
+=======
+    </div>
+>>>>>>> 1a5855f00dc0131480975a785c60443d61cff233
   </product-recommendations>
 </div>
 

@@ -101,10 +101,14 @@
       <header-drawer data-breakpoint="tablet">
         <details id="Details-menu-drawer-container" class="menu-drawer-container">
           <summary class="header__icon header__icon--menu header__icon--summary link focus-inset" aria-label="{{ 'sections.header.menu' | t }}">
+<<<<<<< HEAD
             <span>
               {% render 'icon-hamburger' %}
               {% render 'icon-close' %}
             </span>
+=======
+          
+>>>>>>> 1a5855f00dc0131480975a785c60443d61cff233
           </summary>
           <div id="menu-drawer" class="gradient menu-drawer motion-reduce" tabindex="-1">
             <div class="menu-drawer__inner-container">
@@ -130,9 +134,13 @@
                                   {%- for childlink in link.links -%}
                                     <li>
                                       {%- if childlink.links == blank -%}
+<<<<<<< HEAD
                                         <a href="{{ childlink.url }}" class="menu-drawer__menu-item link link--text list-menu__item focus-inset{% if childlink.current %} menu-drawer__menu-item--active{% endif %}"{% if childlink.current %} aria-current="page"{% endif %}>
                                           {{ childlink.title | escape }}
                                         </a>
+=======
+                                      
+>>>>>>> 1a5855f00dc0131480975a785c60443d61cff233
                                       {%- else -%}
                                         <details id="Details-menu-drawer-submenu-{{ forloop.index }}">
                                           <summary class="menu-drawer__menu-item link link--text list-menu__item focus-inset">
@@ -281,8 +289,12 @@
             </span>
           </summary>
           <div class="search-modal modal__content gradient" role="dialog" aria-modal="true" aria-label="{{ 'general.search.search' | t }}">
+<<<<<<< HEAD
             <div class="modal-overlay"></div>
             <div class="search-modal__content{% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_vertical_offset < 0 %} search-modal__content-top{% else %} search-modal__content-bottom{% endif %}" tabindex="-1">
+=======
+
+>>>>>>> 1a5855f00dc0131480975a785c60443d61cff233
               {%- if settings.predictive_search_enabled -%}
                 <predictive-search class="search-modal__form" data-loading-text="{{ 'accessibility.loading' | t }}">
               {%- endif -%}
@@ -357,7 +369,11 @@
               alt="{{ section.settings.logo.alt | default: shop.name | escape }}"
             >
           {%- else -%}
+<<<<<<< HEAD
             <span class="h2">{{ shop.name }}</span>
+=======
+            
+>>>>>>> 1a5855f00dc0131480975a785c60443d61cff233
           {%- endif -%}
         </a>
     {%- if request.page_type == 'index' -%}

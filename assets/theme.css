@@ -1,10 +1,21 @@
+.header-wrapper {
+  background-color: #E73127;
+  color: #fff;
+  margin-left: 20%;
+}
+.header-wrapper .h2 {
+  color: #fff;
+}
+.header-wrapper .header__menu-item {
+  color: #fff;
+}
+
 .card {
   background-color: #fff;
   border-radius: 8px;
   padding: 1.5em;
 }
 
-<<<<<<< HEAD
 .voltage-selector {
   background-color: #fafafe;
   border-radius: 50px;
@@ -53,15 +64,28 @@
   font-weight: 600;
 }
 
-=======
->>>>>>> a409f2f20b96a5ca41a9b99b238707be81cd4165
+.accordion__title {
+  color: #E73127;
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
 .header-wrapper {
-  background-color: #E73127;
-  color: #fff;
+  margin-left: 20%;
 }
-.header-wrapper .h2 {
-  color: #fff;
+
+.product-main-container {
+  margin-left: 20%;
 }
-.header-wrapper .header__menu-item {
-  color: #fff;
+
+.product-main-container {
+  background-color: #fafafe;
+  height: calc(100vh - 85px);
+}
+
+.product__info-container {
+  display: flex;
+  row-gap: 1em;
+  column-gap: 1.2em;
+  flex-wrap: wrap;
 }
